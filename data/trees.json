@@ -1,0 +1,296 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "title": "NYC American Chestnut Conservation Map",
+    "description": "Tracking American Chestnut trees planted and maintained by various organizations across New York City",
+    "last_updated": "2025-12-05",
+    "version": "1.0"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.9712, 40.7831]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-001",
+        "organization": "NYC Parks",
+        "planted_date": "2023-04-15",
+        "health_status": "healthy",
+        "species": "Castanea dentata",
+        "contact": "forestry@parks.nyc.gov",
+        "last_updated": "2024-11-20",
+        "notes": "Young sapling, showing strong growth",
+        "borough": "Manhattan",
+        "location_description": "Central Park, North Woods"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.9626, 40.8033]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-002",
+        "organization": "Million Trees NYC",
+        "planted_date": "2022-10-08",
+        "health_status": "healthy",
+        "species": "Castanea dentata",
+        "contact": "info@milliontreesnyc.org",
+        "last_updated": "2024-10-15",
+        "notes": "Community planting event, well-established",
+        "borough": "Manhattan",
+        "location_description": "Morningside Park"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.9903, 40.7489]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-003",
+        "organization": "NYC Parks",
+        "planted_date": "2024-03-22",
+        "health_status": "fair",
+        "species": "Castanea dentata",
+        "contact": "forestry@parks.nyc.gov",
+        "last_updated": "2024-09-10",
+        "notes": "Monitoring for drought stress",
+        "borough": "Manhattan",
+        "location_description": "Madison Square Park"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.9654, 40.6829]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-004",
+        "organization": "Brooklyn Botanic Garden",
+        "planted_date": "2021-05-12",
+        "health_status": "healthy",
+        "species": "Castanea dentata",
+        "contact": "conservation@bbg.org",
+        "last_updated": "2024-11-01",
+        "notes": "Part of native plant collection, excellent condition",
+        "borough": "Brooklyn",
+        "location_description": "Brooklyn Botanic Garden grounds"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.9626, 40.6783]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-005",
+        "organization": "Prospect Park Alliance",
+        "planted_date": "2023-09-30",
+        "health_status": "healthy",
+        "species": "Castanea dentata",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-10-28",
+        "notes": "Planted near Ravine, thriving in natural setting",
+        "borough": "Brooklyn",
+        "location_description": "Prospect Park, The Ravine"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.8648, 40.7489]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-006",
+        "organization": "Queens Botanical Garden",
+        "planted_date": "2022-04-20",
+        "health_status": "healthy",
+        "species": "Castanea dentata",
+        "contact": "info@queensbotanical.org",
+        "last_updated": "2024-11-12",
+        "notes": "Educational specimen, frequently visited by school groups",
+        "borough": "Queens",
+        "location_description": "Queens Botanical Garden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.8448, 40.6782]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-007",
+        "organization": "American Chestnut Foundation - NY Chapter",
+        "planted_date": "2020-11-15",
+        "health_status": "fair",
+        "species": "Castanea dentata",
+        "contact": "newyork@acf.org",
+        "last_updated": "2024-08-22",
+        "notes": "Blight-resistant hybrid, showing some leaf damage",
+        "borough": "Queens",
+        "location_description": "Forest Park"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.8709, 40.8491]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-008",
+        "organization": "NYC Parks",
+        "planted_date": "2023-05-06",
+        "health_status": "healthy",
+        "species": "Castanea dentata",
+        "contact": "forestry@parks.nyc.gov",
+        "last_updated": "2024-11-18",
+        "notes": "Strong first-year growth",
+        "borough": "Bronx",
+        "location_description": "Van Cortlandt Park"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.8785, 40.8511]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-009",
+        "organization": "Bronx River Alliance",
+        "planted_date": "2022-06-18",
+        "health_status": "healthy",
+        "species": "Castanea dentata",
+        "contact": "info@bronxriver.org",
+        "last_updated": "2024-10-05",
+        "notes": "Part of riparian restoration project",
+        "borough": "Bronx",
+        "location_description": "Bronx River Greenway"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.8803, 40.8398]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-010",
+        "organization": "New York Botanical Garden",
+        "planted_date": "2021-04-10",
+        "health_status": "healthy",
+        "species": "Castanea dentata",
+        "contact": "conservation@nybg.org",
+        "last_updated": "2024-11-25",
+        "notes": "Research specimen, closely monitored",
+        "borough": "Bronx",
+        "location_description": "New York Botanical Garden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-74.1502, 40.6345]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-011",
+        "organization": "Greenbelt Conservancy",
+        "planted_date": "2023-10-14",
+        "health_status": "healthy",
+        "species": "Castanea dentata",
+        "contact": "info@sigreenbelt.org",
+        "last_updated": "2024-09-30",
+        "notes": "Native woodland restoration",
+        "borough": "Staten Island",
+        "location_description": "Staten Island Greenbelt"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-74.0776, 40.5892]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-012",
+        "organization": "NYC Parks",
+        "planted_date": "2024-04-28",
+        "health_status": "unknown",
+        "species": "Castanea dentata",
+        "contact": "forestry@parks.nyc.gov",
+        "last_updated": "2024-04-28",
+        "notes": "Recently planted, awaiting first assessment",
+        "borough": "Staten Island",
+        "location_description": "Conference House Park"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.9442, 40.8011]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-013",
+        "organization": "Million Trees NYC",
+        "planted_date": "2022-11-05",
+        "health_status": "poor",
+        "species": "Castanea dentata",
+        "contact": "info@milliontreesnyc.org",
+        "last_updated": "2024-07-15",
+        "notes": "Showing signs of stress, increased monitoring",
+        "borough": "Manhattan",
+        "location_description": "Marcus Garvey Park"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.9195, 40.6965]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-014",
+        "organization": "Friends of McGolrick Park",
+        "planted_date": "2023-06-10",
+        "health_status": "healthy",
+        "species": "Castanea dentata",
+        "contact": "info@mcgolrickpark.org",
+        "last_updated": "2024-10-20",
+        "notes": "Community stewardship program",
+        "borough": "Brooklyn",
+        "location_description": "McGolrick Park"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.9509, 40.6551]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-015",
+        "organization": "Prospect Park Alliance",
+        "planted_date": "2021-09-25",
+        "health_status": "healthy",
+        "species": "Castanea dentata",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-11-08",
+        "notes": "Part of woodland restoration initiative",
+        "borough": "Brooklyn",
+        "location_description": "Prospect Park, Woodland Trail"
+      }
+    }
+  ]
+}

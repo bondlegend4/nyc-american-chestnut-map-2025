@@ -205,3 +205,25 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Old LPR project files (not needed for tree map)
+*.db
+*.db-journal
+webcams.db
+camera_config.json
+geofence_map.html
+camera_images/
+yolov3/
+*.weights
+coco.names
+boundary_server.py
+manage_boundaries.py
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Testing files
+sample_trees.csv
+test_*.csv
+test_*.json

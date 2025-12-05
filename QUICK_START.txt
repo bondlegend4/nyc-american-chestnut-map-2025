@@ -1,0 +1,53 @@
+========================================
+NYC AMERICAN CHESTNUT MAP - QUICK START
+========================================
+
+📍 PROJECT LOCATION:
+/Users/jose_d_sandoval/Desktop/Send_to_Diana/Highway_folder/lpr-/nyc-american-chestnut-map-2025/
+
+⚡ TEST LOCALLY (30 seconds):
+cd nyc-american-chestnut-map-2025
+python3 -m http.server 8000
+→ Open http://localhost:8000
+
+🚀 DEPLOY TO GITHUB (10 minutes):
+
+1. Create GitHub repo: nyc-american-chestnut-map-2025
+
+2. Push code:
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git remote add origin https://github.com/YOUR-USERNAME/nyc-american-chestnut-map-2025.git
+   git push -u origin main
+
+3. Enable GitHub Pages:
+   - Go to Settings → Pages
+   - Source: main branch
+   - Save
+
+4. Visit: https://YOUR-USERNAME.github.io/nyc-american-chestnut-map-2025/
+
+📝 ADD TREE DATA:
+
+Edit data/trees.json OR use:
+python generate_map.py your_trees.csv
+
+CSV Format:
+tree_id,organization,latitude,longitude,planted_date,health_status,contact,notes,borough,location_description
+
+📚 DOCUMENTATION:
+- README.md         → Full guide
+- SETUP_GUIDE.md    → Step-by-step instructions
+- PROJECT_SUMMARY.md → Technical overview
+
+✅ WHAT'S INCLUDED:
+✓ Interactive map (index.html)
+✓ 15 sample trees (data/trees.json)
+✓ CSV converter (generate_map.py)
+✓ Auto-deploy (GitHub Actions)
+✓ Complete documentation
+
+💰 COST: $0/month (GitHub Pages is free!)
+
+🌳 Ready to deploy!

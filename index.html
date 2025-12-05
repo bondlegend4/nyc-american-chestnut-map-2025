@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYC American Chestnut Conservation Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        }
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+        .info-panel {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            max-width: 300px;
+        }
+        .info-panel h2 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            color: #2c5f2d;
+        }
+        .info-panel p {
+            margin: 5px 0;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        .info-panel .stats {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+            font-size: 12px;
+            color: #666;
+        }
+        .leaflet-popup-content-wrapper {
+            border-radius: 8px;
+            box-shadow: 0 3px 14px rgba(0,0,0,0.3);
+        }
+        .leaflet-popup-content {
+            font-size: 13px;
+            line-height: 1.5;
+            max-width: 280px;
+            margin: 13px 15px;
+        }
+        .leaflet-popup-content h3 {
+            margin: 0 0 8px 0;
+            color: #2c5f2d;
+            font-size: 15px;
+            border-bottom: 2px solid #97c680;
+            padding-bottom: 5px;
+        }
+        .popup-row {
+            margin: 6px 0;
+            display: flex;
+            align-items: start;
+        }
+        .popup-label {
+            font-weight: 600;
+            min-width: 85px;
+            color: #555;
+        }
+        .popup-value {
+            color: #333;
+        }
+        .health-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .health-healthy { background: #d4edda; color: #155724; }
+        .health-fair { background: #fff3cd; color: #856404; }
+        .health-poor { background: #f8d7da; color: #721c24; }
+        .health-unknown { background: #e2e3e5; color: #383d41; }
+        .popup-contact {
+            margin-top: 10px;
+            padding-top: 8px;
+            border-top: 1px solid #eee;
+        }
+        .popup-contact a {
+            color: #2c5f2d;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 12px;
+        }
+        .popup-contact a:hover {
+            text-decoration: underline;
+        }
+        .leaflet-control-layers {
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        .leaflet-control-layers-expanded {
+            padding: 10px;
+        }
+        .legend {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            padding: 12px 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            font-size: 12px;
+        }
+        .legend h4 {
+            margin: 0 0 8px 0;
+            font-size: 13px;
+            color: #333;
+        }
+        .legend-item {
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+        }
+        .legend-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 8px;
+            border: 2px solid #555;
+        }
+        .icon-healthy { background: #28a745; }
+        .icon-fair { background: #ffc107; }
+        .icon-poor { background: #dc3545; }
+        .icon-unknown { background: #6c757d; }
+    </style>
+</head>
+<body>
+    <div class="info-panel">
+        <h2>🌳 NYC American Chestnut Map</h2>
+        <p>Track conservation efforts across NYC's five boroughs. Click markers to view tree details and organization contacts.</p>
+        <div class="stats">
+            <div id="tree-count">Loading trees...</div>
+            <div id="org-count"></div>
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <div class="legend">
+        <h4>Tree Health Status</h4>
+        <div class="legend-item">
+            <div class="legend-icon icon-healthy"></div>
+            <span>Healthy</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-icon icon-fair"></div>
+            <span>Fair</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-icon icon-poor"></div>
+            <span>Poor / Monitoring</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-icon icon-unknown"></div>
+            <span>Unknown</span>
+        </div>
+    </div>
+
+    <script>
+        // Initialize map centered on NYC
+        const map = L.map('map').setView([40.7128, -74.0060], 11);
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Custom marker icons based on health status
+        function getHealthIcon(healthStatus) {
+            const colors = {
+                'healthy': '#28a745',
+                'fair': '#ffc107',
+                'poor': '#dc3545',
+                'unknown': '#6c757d'
+            };
+
+            const color = colors[healthStatus] || colors['unknown'];
+
+            return L.divIcon({
+                className: 'custom-marker',
+                html: `<svg width="30" height="40" viewBox="0 0 30 40" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 0C8.4 0 3 5.4 3 12c0 8.3 12 28 12 28s12-19.7 12-28c0-6.6-5.4-12-12-12z"
+                          fill="${color}" stroke="#333" stroke-width="1.5"/>
+                    <circle cx="15" cy="12" r="5" fill="white" opacity="0.9"/>
+                    <text x="15" y="16" text-anchor="middle" font-size="14" fill="${color}" font-weight="bold">🌳</text>
+                </svg>`,
+                iconSize: [30, 40],
+                iconAnchor: [15, 40],
+                popupAnchor: [0, -40]
+            });
+        }
+
+        // Create marker cluster groups by organization
+        const organizationLayers = {};
+        const allTreesLayer = L.markerClusterGroup({
+            chunkedLoading: true,
+            maxClusterRadius: 50
+        });
+
+        // Format date helper
+        function formatDate(dateString) {
+            if (!dateString) return 'Unknown';
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+        }
+
+        // Create popup content
+        function createPopupContent(props) {
+            const healthClass = `health-${props.health_status || 'unknown'}`;
+            const healthText = (props.health_status || 'unknown').charAt(0).toUpperCase() +
+                             (props.health_status || 'unknown').slice(1);
+
+            return `
+                <h3>${props.organization || 'Unknown Organization'}</h3>
+                <div class="popup-row">
+                    <span class="popup-label">Tree ID:</span>
+                    <span class="popup-value">${props.tree_id || 'N/A'}</span>
+                </div>
+                <div class="popup-row">
+                    <span class="popup-label">Health:</span>
+                    <span class="health-badge ${healthClass}">${healthText}</span>
+                </div>
+                <div class="popup-row">
+                    <span class="popup-label">Planted:</span>
+                    <span class="popup-value">${formatDate(props.planted_date)}</span>
+                </div>
+                <div class="popup-row">
+                    <span class="popup-label">Last Update:</span>
+                    <span class="popup-value">${formatDate(props.last_updated)}</span>
+                </div>
+                ${props.notes ? `<div class="popup-row"><span class="popup-label">Notes:</span><span class="popup-value">${props.notes}</span></div>` : ''}
+                <div class="popup-contact">
+                    <a href="mailto:${props.contact || 'conservation@nyc.gov'}?subject=Tree Update: ${props.tree_id}&body=Tree ID: ${props.tree_id}%0ALocation: ${props.coordinates}%0A%0AUpdate:%0A">
+                        📧 Report Growth/Update
+                    </a>
+                </div>
+            `;
+        }
+
+        // Load tree data
+        fetch('data/trees.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to load tree data');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const organizations = new Set();
+                let treeCount = 0;
+
+                data.features.forEach(feature => {
+                    const props = feature.properties;
+                    const coords = feature.geometry.coordinates;
+                    const latlng = [coords[1], coords[0]]; // GeoJSON uses [lon, lat]
+
+                    // Track organization
+                    const org = props.organization || 'Unknown';
+                    organizations.add(org);
+
+                    // Create organization layer if needed
+                    if (!organizationLayers[org]) {
+                        organizationLayers[org] = L.markerClusterGroup({
+                            chunkedLoading: true,
+                            maxClusterRadius: 50
+                        });
+                    }
+
+                    // Create marker
+                    const marker = L.marker(latlng, {
+                        icon: getHealthIcon(props.health_status)
+                    });
+
+                    marker.bindPopup(() => createPopupContent(props), {
+                        minWidth: 250,
+                        maxWidth: 300
+                    });
+
+                    // Add to layers
+                    allTreesLayer.addLayer(marker);
+                    organizationLayers[org].addLayer(marker);
+
+                    treeCount++;
+                });
+
+                // Add all trees layer to map by default
+                allTreesLayer.addTo(map);
+
+                // Create layer control
+                const overlays = {
+                    'All Trees': allTreesLayer
+                };
+
+                // Add individual organization layers
+                Object.keys(organizationLayers).sort().forEach(org => {
+                    overlays[`${org} Trees`] = organizationLayers[org];
+                });
+
+                L.control.layers(null, overlays, {
+                    collapsed: false,
+                    position: 'topright'
+                }).addTo(map);
+
+                // Update stats
+                document.getElementById('tree-count').textContent = `Total Trees: ${treeCount}`;
+                document.getElementById('org-count').textContent = `Organizations: ${organizations.size}`;
+            })
+            .catch(error => {
+                console.error('Error loading tree data:', error);
+                document.getElementById('tree-count').textContent = 'Error loading tree data';
+                document.getElementById('tree-count').style.color = 'red';
+                alert('Failed to load tree data. Please ensure data/trees.json exists.');
+            });
+    </script>
+</body>
+</html>
