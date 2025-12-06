@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 
     <style>
         html, body {
@@ -150,6 +151,80 @@
         .icon-fair { background: #ffc107; }
         .icon-poor { background: #dc3545; }
         .icon-unknown { background: #6c757d; }
+
+        /* Growth Chart Modal */
+        .chart-modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .chart-modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .chart-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #2c5f2d;
+        }
+        .chart-modal-header h3 {
+            margin: 0;
+            color: #2c5f2d;
+            font-size: 20px;
+        }
+        .chart-close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+        }
+        .chart-close:hover,
+        .chart-close:focus {
+            color: #000;
+        }
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin-bottom: 20px;
+        }
+        .growth-btn {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 6px 12px;
+            background: #2c5f2d;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            text-align: center;
+        }
+        .growth-btn:hover {
+            background: #234d24;
+        }
+        .no-data-message {
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -181,6 +256,20 @@
         <div class="legend-item">
             <div class="legend-icon icon-unknown"></div>
             <span>Unknown</span>
+        </div>
+    </div>
+
+    <!-- Growth Chart Modal -->
+    <div id="chartModal" class="chart-modal">
+        <div class="chart-modal-content">
+            <div class="chart-modal-header">
+                <h3 id="chartTitle">Tree Growth Over Time</h3>
+                <span class="chart-close">&times;</span>
+            </div>
+            <div class="chart-container">
+                <canvas id="growthChart"></canvas>
+            </div>
+            <div id="chartInfo" style="font-size: 13px; color: #666;"></div>
         </div>
     </div>
 
@@ -233,11 +322,172 @@
             return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
         }
 
+        // Growth chart functionality
+        let currentChart = null;
+
+        function showGrowthChart(props) {
+            const modal = document.getElementById('chartModal');
+            const chartTitle = document.getElementById('chartTitle');
+            const chartInfo = document.getElementById('chartInfo');
+
+            chartTitle.textContent = `Growth Chart - ${props.tree_id}`;
+
+            // Check if tree has growth data
+            const growthData = props.growth_data || {};
+            const years = Object.keys(growthData).sort();
+
+            if (years.length === 0) {
+                chartInfo.innerHTML = '<div class="no-data-message">No growth measurements available for this tree.</div>';
+                modal.style.display = 'block';
+                return;
+            }
+
+            // Prepare chart data
+            const heights = years.map(year => growthData[year].height || null);
+            const dbhs = years.map(year => growthData[year].dbh || null);
+
+            // Destroy previous chart if exists
+            if (currentChart) {
+                currentChart.destroy();
+            }
+
+            // Create new chart
+            const ctx = document.getElementById('growthChart').getContext('2d');
+            currentChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: years,
+                    datasets: [
+                        {
+                            label: 'Height (feet)',
+                            data: heights,
+                            borderColor: '#28a745',
+                            backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                            yAxisID: 'y-height',
+                            tension: 0.3,
+                            pointRadius: 5,
+                            pointHoverRadius: 7
+                        },
+                        {
+                            label: 'DBH (inches)',
+                            data: dbhs,
+                            borderColor: '#2c5f2d',
+                            backgroundColor: 'rgba(44, 95, 45, 0.1)',
+                            yAxisID: 'y-dbh',
+                            tension: 0.3,
+                            pointRadius: 5,
+                            pointHoverRadius: 7
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: `${props.location_description} - Tree #${props.tree_number}`,
+                            font: { size: 14 }
+                        },
+                        legend: {
+                            display: true,
+                            position: 'top'
+                        }
+                    },
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Survey Year'
+                            }
+                        },
+                        'y-height': {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            title: {
+                                display: true,
+                                text: 'Height (feet)',
+                                color: '#28a745'
+                            },
+                            ticks: {
+                                color: '#28a745'
+                            }
+                        },
+                        'y-dbh': {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            title: {
+                                display: true,
+                                text: 'DBH (inches)',
+                                color: '#2c5f2d'
+                            },
+                            ticks: {
+                                color: '#2c5f2d'
+                            },
+                            grid: {
+                                drawOnChartArea: false
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Add summary info
+            const latestYear = years[years.length - 1];
+            const latestHeight = growthData[latestYear].height;
+            const latestDbh = growthData[latestYear].dbh;
+
+            // Build health display
+            let healthInfo = `<strong>Health Status:</strong> ${props.health_status}`;
+            if (props.health_detail) {
+                healthInfo += `<br><span style="font-style: italic; color: #666;">"${props.health_detail}"</span>`;
+            }
+
+            chartInfo.innerHTML = `
+                <p><strong>Latest Measurements (${latestYear}):</strong>
+                ${latestHeight ? `Height: ${latestHeight}' ` : ''}
+                ${latestDbh ? `DBH: ${latestDbh}"` : ''}
+                </p>
+                <p>${healthInfo}</p>
+                <p style="margin-top: 10px; font-size: 11px; color: #999;">
+                    DBH = Diameter at Breast Height (measured at 4.5 feet above ground)
+                </p>
+            `;
+
+            modal.style.display = 'block';
+        }
+
+        // Close modal functionality
+        document.querySelector('.chart-close').onclick = function() {
+            document.getElementById('chartModal').style.display = 'none';
+        };
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('chartModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
+
         // Create popup content
         function createPopupContent(props) {
             const healthClass = `health-${props.health_status || 'unknown'}`;
             const healthText = (props.health_status || 'unknown').charAt(0).toUpperCase() +
                              (props.health_status || 'unknown').slice(1);
+
+            const hasGrowthData = props.growth_data && Object.keys(props.growth_data).length > 0;
+
+            // Build health display with detail if available
+            let healthDisplay = `<span class="health-badge ${healthClass}">${healthText}</span>`;
+            if (props.health_detail) {
+                healthDisplay += `<br><span class="popup-value" style="font-size: 11px; color: #666; font-style: italic;">"${props.health_detail}"</span>`;
+            }
 
             return `
                 <h3>${props.organization || 'Unknown Organization'}</h3>
@@ -247,7 +497,7 @@
                 </div>
                 <div class="popup-row">
                     <span class="popup-label">Health:</span>
-                    <span class="health-badge ${healthClass}">${healthText}</span>
+                    <span>${healthDisplay}</span>
                 </div>
                 <div class="popup-row">
                     <span class="popup-label">Planted:</span>
@@ -258,6 +508,11 @@
                     <span class="popup-value">${formatDate(props.last_updated)}</span>
                 </div>
                 ${props.notes ? `<div class="popup-row"><span class="popup-label">Notes:</span><span class="popup-value">${props.notes}</span></div>` : ''}
+                ${hasGrowthData ? `
+                    <button class="growth-btn" onclick="showGrowthChart(${JSON.stringify(props).replace(/"/g, '&quot;')})">
+                        📊 View Growth Chart
+                    </button>
+                ` : ''}
                 <div class="popup-contact">
                     <a href="mailto:${props.contact || 'conservation@nyc.gov'}?subject=Tree Update: ${props.tree_id}&body=Tree ID: ${props.tree_id}%0ALocation: ${props.coordinates}%0A%0AUpdate:%0A">
                         📧 Report Growth/Update
@@ -265,6 +520,9 @@
                 </div>
             `;
         }
+
+        // Make showGrowthChart global
+        window.showGrowthChart = showGrowthChart;
 
         // Load tree data
         fetch('data/trees.json')
