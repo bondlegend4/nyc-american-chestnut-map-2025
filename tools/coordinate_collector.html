@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree Coordinate Collector</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c5f2d;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .gps-button {
+            width: 100%;
+            padding: 15px;
+            background: #2c5f2d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+        .gps-button:hover {
+            background: #234d24;
+        }
+        .gps-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .coordinates-display {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-family: monospace;
+        }
+        .coordinate-value {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c5f2d;
+        }
+        .accuracy {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background: #218838;
+        }
+        .status-message {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .info {
+            background: #d1ecf1;
+            color: #0c5460;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌳 Tree GPS Collector</h1>
+        <p class="subtitle">Collect confirmed GPS coordinates for American Chestnut trees</p>
+
+        <div class="info">
+            📱 <strong>Instructions:</strong><br>
+            1. Stand next to the tree<br>
+            2. Click "Get My Location"<br>
+            3. Fill in tree details<br>
+            4. Click "Save Coordinate"
+        </div>
+
+        <form id="coordinateForm">
+            <div class="form-group">
+                <label>Tree ID</label>
+                <input type="text" id="treeId" placeholder="NYC-AC-001 or Tree #7" required>
+            </div>
+
+            <div class="form-group">
+                <label>Park/Location</label>
+                <select id="park" required>
+                    <option value="">Select park...</option>
+                    <option value="PROSPECT PARK">Prospect Park</option>
+                    <option value="BROOKLYN BOTANIC GARDEN">Brooklyn Botanic Garden</option>
+                    <option value="FORT GREEN PARK">Fort Greene Park</option>
+                    <option value="WASHINGTON PARK">Washington Park</option>
+                    <option value="GREENWOOD CEMETERY">Green-Wood Cemetery</option>
+                    <option value="OTHER">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Specific Area (optional)</label>
+                <input type="text" id="area" placeholder="e.g., Sugar Bowl, Lookout Hill">
+            </div>
+
+            <button type="button" class="gps-button" id="getLocationBtn">
+                📍 Get My Location
+            </button>
+
+            <div id="coordinatesSection" class="hidden">
+                <div class="coordinates-display">
+                    <div><strong>Latitude:</strong> <span class="coordinate-value" id="latDisplay">-</span></div>
+                    <div><strong>Longitude:</strong> <span class="coordinate-value" id="lonDisplay">-</span></div>
+                    <div class="accuracy">Accuracy: ±<span id="accuracyDisplay">-</span> meters</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Your Name (optional)</label>
+                    <input type="text" id="collectorName" placeholder="Your name">
+                </div>
+
+                <div class="form-group">
+                    <label>Notes (optional)</label>
+                    <input type="text" id="notes" placeholder="e.g., Near bench, north side of path">
+                </div>
+
+                <button type="submit" class="submit-btn">💾 Save Coordinate</button>
+            </div>
+        </form>
+
+        <div id="statusMessage" class="status-message hidden"></div>
+
+        <div id="outputSection" class="hidden" style="margin-top: 30px;">
+            <h3>Saved Coordinates</h3>
+            <pre id="csvOutput" style="background: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto;"></pre>
+            <button type="button" onclick="downloadCSV()" style="width: 100%; padding: 10px; background: #17a2b8; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                📥 Download CSV
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let currentPosition = null;
+        let savedCoordinates = [];
+
+        // Load saved coordinates from localStorage
+        window.addEventListener('load', () => {
+            const saved = localStorage.getItem('treeCoordinates');
+            if (saved) {
+                savedCoordinates = JSON.parse(saved);
+                updateOutput();
+            }
+        });
+
+        // Get GPS location
+        document.getElementById('getLocationBtn').addEventListener('click', function() {
+            const btn = this;
+            btn.textContent = '🔄 Getting location...';
+            btn.disabled = true;
+
+            if (!navigator.geolocation) {
+                showStatus('GPS not available on this device', 'error');
+                btn.textContent = '📍 Get My Location';
+                btn.disabled = false;
+                return;
+            }
+
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    currentPosition = position;
+                    document.getElementById('latDisplay').textContent = position.coords.latitude.toFixed(6);
+                    document.getElementById('lonDisplay').textContent = position.coords.longitude.toFixed(6);
+                    document.getElementById('accuracyDisplay').textContent = position.coords.accuracy.toFixed(1);
+
+                    document.getElementById('coordinatesSection').classList.remove('hidden');
+                    btn.textContent = '✓ Location Captured';
+                    btn.style.background = '#28a745';
+
+                    showStatus('Location captured successfully!', 'success');
+                },
+                (error) => {
+                    let message = 'Could not get location';
+                    if (error.code === error.PERMISSION_DENIED) {
+                        message = 'Location permission denied. Please enable location access.';
+                    } else if (error.code === error.POSITION_UNAVAILABLE) {
+                        message = 'Location unavailable. Try moving to a more open area.';
+                    }
+                    showStatus(message, 'error');
+                    btn.textContent = '📍 Get My Location';
+                    btn.disabled = false;
+                },
+                {
+                    enableHighAccuracy: true,
+                    timeout: 10000,
+                    maximumAge: 0
+                }
+            );
+        });
+
+        // Save coordinate
+        document.getElementById('coordinateForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            if (!currentPosition) {
+                showStatus('Please capture GPS location first', 'error');
+                return;
+            }
+
+            const data = {
+                tree_id: document.getElementById('treeId').value,
+                park: document.getElementById('park').value,
+                area: document.getElementById('area').value || '',
+                latitude: currentPosition.coords.latitude,
+                longitude: currentPosition.coords.longitude,
+                accuracy_meters: currentPosition.coords.accuracy,
+                collector: document.getElementById('collectorName').value || '',
+                notes: document.getElementById('notes').value || '',
+                timestamp: new Date().toISOString()
+            };
+
+            savedCoordinates.push(data);
+            localStorage.setItem('treeCoordinates', JSON.stringify(savedCoordinates));
+
+            showStatus(`Saved ${data.tree_id}! Total: ${savedCoordinates.length} trees`, 'success');
+
+            // Reset form
+            document.getElementById('coordinateForm').reset();
+            document.getElementById('coordinatesSection').classList.add('hidden');
+            document.getElementById('getLocationBtn').textContent = '📍 Get My Location';
+            document.getElementById('getLocationBtn').style.background = '#2c5f2d';
+            document.getElementById('getLocationBtn').disabled = false;
+            currentPosition = null;
+
+            updateOutput();
+        });
+
+        function showStatus(message, type) {
+            const statusDiv = document.getElementById('statusMessage');
+            statusDiv.textContent = message;
+            statusDiv.className = `status-message ${type}`;
+            statusDiv.classList.remove('hidden');
+
+            setTimeout(() => {
+                statusDiv.classList.add('hidden');
+            }, 5000);
+        }
+
+        function updateOutput() {
+            if (savedCoordinates.length === 0) return;
+
+            const outputSection = document.getElementById('outputSection');
+            const csvOutput = document.getElementById('csvOutput');
+
+            // Create CSV
+            const headers = ['tree_id', 'park', 'area', 'latitude', 'longitude', 'accuracy_meters', 'collector', 'notes', 'timestamp'];
+            let csv = headers.join(',') + '\n';
+
+            savedCoordinates.forEach(coord => {
+                const row = headers.map(h => {
+                    let val = coord[h] || '';
+                    if (typeof val === 'string' && val.includes(',')) {
+                        val = `"${val}"`;
+                    }
+                    return val;
+                });
+                csv += row.join(',') + '\n';
+            });
+
+            csvOutput.textContent = csv;
+            outputSection.classList.remove('hidden');
+        }
+
+        function downloadCSV() {
+            const headers = ['tree_id', 'park', 'area', 'latitude', 'longitude', 'accuracy_meters', 'collector', 'notes', 'timestamp'];
+            let csv = headers.join(',') + '\n';
+
+            savedCoordinates.forEach(coord => {
+                const row = headers.map(h => {
+                    let val = coord[h] || '';
+                    if (typeof val === 'string' && val.includes(',')) {
+                        val = `"${val}"`;
+                    }
+                    return val;
+                });
+                csv += row.join(',') + '\n';
+            });
+
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `tree_coordinates_${new Date().toISOString().split('T')[0]}.csv`;
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+
+        // Clear data function (for testing)
+        function clearData() {
+            if (confirm('Clear all saved coordinates?')) {
+                localStorage.removeItem('treeCoordinates');
+                savedCoordinates = [];
+                document.getElementById('outputSection').classList.add('hidden');
+                showStatus('All data cleared', 'success');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -11,7 +11,7 @@ An interactive map tracking American Chestnut (*Castanea dentata*) trees planted
 
 ## 🗺️ Live Map
 
-**View the map**: [https://YOUR-USERNAME.github.io/nyc-american-chestnut-map-2025/](https://YOUR-USERNAME.github.io/nyc-american-chestnut-map-2025/)
+**View the map**: [https://bondlegend4.github.io/nyc-american-chestnut-map-2025/](https://bondlegend4.github.io/nyc-american-chestnut-map-2025/)
 
 _(Replace with your actual GitHub Pages URL after deployment)_
 
@@ -38,7 +38,7 @@ _(Replace with your actual GitHub Pages URL after deployment)_
 ### 1. Fork/Clone Repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/nyc-american-chestnut-map-2025.git
+git clone https://github.com/bondlegend4/nyc-american-chestnut-map-2025.git
 cd nyc-american-chestnut-map-2025
 ```
 
@@ -52,33 +52,71 @@ Edit `data/trees.json` with your tree locations (see [Data Format](#data-format)
 2. Navigate to **Pages** (left sidebar)
 3. Under **Source**, select `main` branch
 4. Click **Save**
-5. Your site will be live at `https://YOUR-USERNAME.github.io/nyc-american-chestnut-map-2025/`
+5. Your site will be live at `https://bondlegend4.github.io/nyc-american-chestnut-map-2025/`
 
 ### 4. Test Locally (Optional)
 
 ```bash
-# Simple HTTP server (Python 3)
+# Start local server
 python3 -m http.server 8000
-
-# Or using Node.js
-npx http-server
 
 # Visit http://localhost:8000
 ```
+
+**Server Management**:
+- **Stop server**: `kill $(lsof -ti:8000)` or press `Ctrl+C`
+- **Hard refresh browser**: `Cmd+Shift+R` (Mac) or `Ctrl+Shift+R` (Windows/Linux)
+- **See [SERVER_MANAGEMENT.md](SERVER_MANAGEMENT.md) for complete guide**
+
+**After rebuilding data**:
+1. Stop the server
+2. Restart: `python3 -m http.server 8000`
+3. Hard refresh browser to clear cache
 
 ## 📁 Project Structure
 
 ```
 nyc-american-chestnut-map-2025/
-├── index.html              # Main map visualization
+├── README.md                          # This file - project overview
+├── index.html                         # Interactive map visualization
+│
 ├── data/
-│   └── trees.json         # GeoJSON tree data
-├── generate_map.py        # CSV/Excel → GeoJSON converter
-├── README.md              # This file
+│   └── trees.json                    # Generated GeoJSON (DO NOT EDIT manually)
+│
+├── scripts/                           # Data processing
+│   ├── build_trees_with_accuracy.py  # ⭐ PRIMARY - Use for yearly updates
+│   ├── build_with_landuse_validation.py  # Optional OSM validation
+│   ├── update_confirmed_coordinates.py   # Merge GPS data
+│   ├── park_boundaries.py            # Park definitions library
+│   └── extract_survey_locations.py   # Parse Excel locations
+│
+├── tools/                             # Utilities
+│   ├── coordinate_collector.html     # Mobile GPS collection
+│   ├── landuse_validator.py         # OSM API validation
+│   └── generate_map.py              # Legacy CSV converter
+│
+├── docs/                              # Documentation
+│   ├── DOCUMENTATION_INDEX.md        # Master index ⭐ START HERE
+│   ├── YEARLY_DATA_WORKFLOW.md      # Annual processing guide
+│   ├── DATA_PROCESSING_SCRIPTS.md   # Script reference
+│   ├── SERVER_MANAGEMENT.md         # Local server guide
+│   └── ... (feature documentation)
+│
+├── archive/                           # Historical data
+│   ├── 2024 year end chestnut results.xlsx
+│   └── survey_locations_geocoded.csv
+│
+├── venv/                              # Python virtual environment
+│
 └── .github/
     └── workflows/
-        └── deploy.yml     # Auto-deploy on push (optional)
+        └── deploy.yml                # Auto-deploy on push
 ```
+
+**Key Files**:
+- 📖 **docs/DOCUMENTATION_INDEX.md** - Complete documentation guide
+- ⭐ **docs/YEARLY_DATA_WORKFLOW.md** - Start here for annual updates
+- 🗺️ **scripts/build_trees_with_accuracy.py** - Primary data builder
 
 ## 📋 Data Format
 
@@ -216,7 +254,7 @@ When budget allows, consider:
 
 For questions about this map or to add your organization's trees:
 
-- **GitHub Issues**: [Create an issue](https://github.com/YOUR-USERNAME/nyc-american-chestnut-map-2025/issues)
+- **GitHub Issues**: [Create an issue](https://github.com/bondlegend4/nyc-american-chestnut-map-2025/issues)
 - **Email**: YOUR-EMAIL@example.com
 - **Organization**: YOUR-ORGANIZATION
 

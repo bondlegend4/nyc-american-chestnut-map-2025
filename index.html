@@ -96,6 +96,68 @@
         .health-fair { background: #fff3cd; color: #856404; }
         .health-poor { background: #f8d7da; color: #721c24; }
         .health-unknown { background: #e2e3e5; color: #383d41; }
+
+        /* Accuracy badges */
+        .accuracy-badge {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 10px;
+            font-weight: 500;
+            margin-left: 5px;
+        }
+        .accuracy-confirmed { background: #28a745; color: white; }
+        .accuracy-area { background: #17a2b8; color: white; }
+        .accuracy-park { background: #ffc107; color: #333; }
+        .accuracy-estimated { background: #dc3545; color: white; }
+
+        .accuracy-info {
+            font-size: 11px;
+            color: #666;
+            font-style: italic;
+            margin-top: 3px;
+        }
+
+        /* Coordinate tooltip on hover */
+        .accuracy-badge-wrapper {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+        }
+        .coordinate-tooltip {
+            visibility: hidden;
+            opacity: 0;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 5px 8px;
+            border-radius: 4px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            font-size: 10px;
+            font-family: 'Courier New', monospace;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+        .coordinate-tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #333 transparent transparent transparent;
+        }
+        .accuracy-badge-wrapper:hover .coordinate-tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
         .popup-contact {
             margin-top: 10px;
             padding-top: 8px;
@@ -476,7 +538,7 @@
         };
 
         // Create popup content
-        function createPopupContent(props) {
+        function createPopupContent(props, coordinates) {
             const healthClass = `health-${props.health_status || 'unknown'}`;
             const healthText = (props.health_status || 'unknown').charAt(0).toUpperCase() +
                              (props.health_status || 'unknown').slice(1);
@@ -489,6 +551,38 @@
                 healthDisplay += `<br><span class="popup-value" style="font-size: 11px; color: #666; font-style: italic;">"${props.health_detail}"</span>`;
             }
 
+            // Extract coordinates (GeoJSON format is [lon, lat])
+            const lat = coordinates[1];
+            const lon = coordinates[0];
+            const coordsText = `${lat.toFixed(6)}, ${lon.toFixed(6)}`;
+            const coordsTextDetailed = `Lat: ${lat.toFixed(6)}, Lon: ${lon.toFixed(6)}`;
+
+            // Build location accuracy display with coordinate tooltip
+            let accuracyDisplay = '';
+            if (props.location_accuracy) {
+                const acc = props.location_accuracy;
+                const accClass = `accuracy-${acc.level}`;
+                const accIcon = {
+                    'confirmed': '📍',
+                    'area': '🎯',
+                    'park': '📌',
+                    'estimated': '⚠️'
+                }[acc.level] || '📍';
+
+                accuracyDisplay = `
+                    <div class="popup-row">
+                        <span class="popup-label">Location:</span>
+                        <span>
+                            <span class="accuracy-badge-wrapper">
+                                <span class="accuracy-badge ${accClass}">${accIcon} ${acc.level.toUpperCase()}</span>
+                                <span class="coordinate-tooltip">${coordsTextDetailed}</span>
+                            </span>
+                            <div class="accuracy-info">${acc.description}</div>
+                        </span>
+                    </div>
+                `;
+            }
+
             return `
                 <h3>${props.organization || 'Unknown Organization'}</h3>
                 <div class="popup-row">
@@ -499,6 +593,7 @@
                     <span class="popup-label">Health:</span>
                     <span>${healthDisplay}</span>
                 </div>
+                ${accuracyDisplay}
                 <div class="popup-row">
                     <span class="popup-label">Planted:</span>
                     <span class="popup-value">${formatDate(props.planted_date)}</span>
@@ -558,7 +653,7 @@
                         icon: getHealthIcon(props.health_status)
                     });
 
-                    marker.bindPopup(() => createPopupContent(props), {
+                    marker.bindPopup(() => createPopupContent(props, coords), {
                         minWidth: 250,
                         maxWidth: 300
                     });
