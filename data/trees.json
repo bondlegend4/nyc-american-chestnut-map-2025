@@ -4,292 +4,1880 @@
     "title": "NYC American Chestnut Conservation Map",
     "description": "Tracking American Chestnut trees planted and maintained by various organizations across New York City",
     "last_updated": "2025-12-05",
-    "version": "1.0"
+    "version": "1.0",
+    "generated_from": "2024 year end chestnut results.xlsx",
+    "survey_date": "2024-12-20",
+    "notes": "Tree locations are approximate geocoded coordinates with small offsets for visualization"
   },
   "features": [
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-73.9712, 40.7831]
+        "coordinates": [
+          -73.970809,
+          40.6622443
+        ]
       },
       "properties": {
         "tree_id": "NYC-AC-001",
-        "organization": "NYC Parks",
-        "planted_date": "2023-04-15",
-        "health_status": "healthy",
-        "species": "Castanea dentata",
-        "contact": "forestry@parks.nyc.gov",
-        "last_updated": "2024-11-20",
-        "notes": "Young sapling, showing strong growth",
-        "borough": "Manhattan",
-        "location_description": "Central Park, North Woods"
+        "organization": "Prospect Park Alliance",
+        "tree_number": 7,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #7",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Sugar Bowl"
       }
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-73.9626, 40.8033]
+        "coordinates": [
+          -73.970139,
+          40.6618843
+        ]
       },
       "properties": {
         "tree_id": "NYC-AC-002",
-        "organization": "Million Trees NYC",
-        "planted_date": "2022-10-08",
-        "health_status": "healthy",
-        "species": "Castanea dentata",
-        "contact": "info@milliontreesnyc.org",
-        "last_updated": "2024-10-15",
-        "notes": "Community planting event, well-established",
-        "borough": "Manhattan",
-        "location_description": "Morningside Park"
+        "organization": "Prospect Park Alliance",
+        "tree_number": 10,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #10",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Sugar Bowl"
       }
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-73.9903, 40.7489]
+        "coordinates": [
+          -73.970409,
+          40.6627243
+        ]
       },
       "properties": {
         "tree_id": "NYC-AC-003",
-        "organization": "NYC Parks",
-        "planted_date": "2024-03-22",
-        "health_status": "fair",
-        "species": "Castanea dentata",
-        "contact": "forestry@parks.nyc.gov",
-        "last_updated": "2024-09-10",
-        "notes": "Monitoring for drought stress",
-        "borough": "Manhattan",
-        "location_description": "Madison Square Park"
+        "organization": "Prospect Park Alliance",
+        "tree_number": 11,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #11",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Sugar Bowl"
       }
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-73.9654, 40.6829]
+        "coordinates": [
+          -73.970629,
+          40.6622543
+        ]
       },
       "properties": {
         "tree_id": "NYC-AC-004",
-        "organization": "Brooklyn Botanic Garden",
-        "planted_date": "2021-05-12",
-        "health_status": "healthy",
-        "species": "Castanea dentata",
-        "contact": "conservation@bbg.org",
-        "last_updated": "2024-11-01",
-        "notes": "Part of native plant collection, excellent condition",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 13,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #13",
         "borough": "Brooklyn",
-        "location_description": "Brooklyn Botanic Garden grounds"
+        "location_description": "PROSPECT PARK - Sugar Bowl"
       }
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-73.9626, 40.6783]
+        "coordinates": [
+          -73.97082900000001,
+          40.6620243
+        ]
       },
       "properties": {
         "tree_id": "NYC-AC-005",
         "organization": "Prospect Park Alliance",
-        "planted_date": "2023-09-30",
-        "health_status": "healthy",
-        "species": "Castanea dentata",
+        "tree_number": 14,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
         "contact": "info@prospectpark.org",
-        "last_updated": "2024-10-28",
-        "notes": "Planted near Ravine, thriving in natural setting",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #14",
         "borough": "Brooklyn",
-        "location_description": "Prospect Park, The Ravine"
+        "location_description": "PROSPECT PARK - Sugar Bowl"
       }
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-73.8648, 40.7489]
+        "coordinates": [
+          -73.970709,
+          40.6625843
+        ]
       },
       "properties": {
         "tree_id": "NYC-AC-006",
-        "organization": "Queens Botanical Garden",
-        "planted_date": "2022-04-20",
-        "health_status": "healthy",
-        "species": "Castanea dentata",
-        "contact": "info@queensbotanical.org",
-        "last_updated": "2024-11-12",
-        "notes": "Educational specimen, frequently visited by school groups",
-        "borough": "Queens",
-        "location_description": "Queens Botanical Garden"
+        "organization": "Prospect Park Alliance",
+        "tree_number": 16,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #16",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Sugar Bowl"
       }
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-73.8448, 40.6782]
+        "coordinates": [
+          -73.970329,
+          40.662524299999994
+        ]
       },
       "properties": {
         "tree_id": "NYC-AC-007",
-        "organization": "American Chestnut Foundation - NY Chapter",
-        "planted_date": "2020-11-15",
-        "health_status": "fair",
-        "species": "Castanea dentata",
-        "contact": "newyork@acf.org",
-        "last_updated": "2024-08-22",
-        "notes": "Blight-resistant hybrid, showing some leaf damage",
-        "borough": "Queens",
-        "location_description": "Forest Park"
+        "organization": "Prospect Park Alliance",
+        "tree_number": 19,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #19",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Sugar Bowl"
       }
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-73.8709, 40.8491]
+        "coordinates": [
+          -73.971039,
+          40.662574299999996
+        ]
       },
       "properties": {
         "tree_id": "NYC-AC-008",
-        "organization": "NYC Parks",
-        "planted_date": "2023-05-06",
-        "health_status": "healthy",
-        "species": "Castanea dentata",
-        "contact": "forestry@parks.nyc.gov",
-        "last_updated": "2024-11-18",
-        "notes": "Strong first-year growth",
-        "borough": "Bronx",
-        "location_description": "Van Cortlandt Park"
+        "organization": "Prospect Park Alliance",
+        "tree_number": 20,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #20",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Sugar Bowl"
       }
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-73.8785, 40.8511]
+        "coordinates": [
+          -73.970909,
+          40.6622643
+        ]
       },
       "properties": {
         "tree_id": "NYC-AC-009",
-        "organization": "Bronx River Alliance",
-        "planted_date": "2022-06-18",
-        "health_status": "healthy",
-        "species": "Castanea dentata",
-        "contact": "info@bronxriver.org",
-        "last_updated": "2024-10-05",
-        "notes": "Part of riparian restoration project",
-        "borough": "Bronx",
-        "location_description": "Bronx River Greenway"
+        "organization": "Prospect Park Alliance",
+        "tree_number": 22,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #22",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Sugar Bowl"
       }
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-73.8803, 40.8398]
+        "coordinates": [
+          -73.97010900000001,
+          40.6617843
+        ]
       },
       "properties": {
         "tree_id": "NYC-AC-010",
-        "organization": "New York Botanical Garden",
-        "planted_date": "2021-04-10",
-        "health_status": "healthy",
-        "species": "Castanea dentata",
-        "contact": "conservation@nybg.org",
-        "last_updated": "2024-11-25",
-        "notes": "Research specimen, closely monitored",
-        "borough": "Bronx",
-        "location_description": "New York Botanical Garden"
+        "organization": "Prospect Park Alliance",
+        "tree_number": 23,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #23",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Sugar Bowl"
       }
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-74.1502, 40.6345]
+        "coordinates": [
+          -73.970399,
+          40.662394299999995
+        ]
       },
       "properties": {
         "tree_id": "NYC-AC-011",
-        "organization": "Greenbelt Conservancy",
-        "planted_date": "2023-10-14",
-        "health_status": "healthy",
-        "species": "Castanea dentata",
-        "contact": "info@sigreenbelt.org",
-        "last_updated": "2024-09-30",
-        "notes": "Native woodland restoration",
-        "borough": "Staten Island",
-        "location_description": "Staten Island Greenbelt"
+        "organization": "Prospect Park Alliance",
+        "tree_number": 24,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #24",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Sugar Bowl"
       }
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-74.0776, 40.5892]
+        "coordinates": [
+          -73.970999,
+          40.6627343
+        ]
       },
       "properties": {
         "tree_id": "NYC-AC-012",
-        "organization": "NYC Parks",
-        "planted_date": "2024-04-28",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 26,
+        "planted_date": "2020-01-01",
         "health_status": "unknown",
-        "species": "Castanea dentata",
-        "contact": "forestry@parks.nyc.gov",
-        "last_updated": "2024-04-28",
-        "notes": "Recently planted, awaiting first assessment",
-        "borough": "Staten Island",
-        "location_description": "Conference House Park"
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #26",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Sugar Bowl"
       }
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-73.9442, 40.8011]
+        "coordinates": [
+          -73.97096900000001,
+          40.6625143
+        ]
       },
       "properties": {
         "tree_id": "NYC-AC-013",
-        "organization": "Million Trees NYC",
-        "planted_date": "2022-11-05",
-        "health_status": "poor",
-        "species": "Castanea dentata",
-        "contact": "info@milliontreesnyc.org",
-        "last_updated": "2024-07-15",
-        "notes": "Showing signs of stress, increased monitoring",
-        "borough": "Manhattan",
-        "location_description": "Marcus Garvey Park"
+        "organization": "Prospect Park Alliance",
+        "tree_number": 2,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #2",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Sugar Bowl"
       }
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-73.9195, 40.6965]
+        "coordinates": [
+          -73.97042900000001,
+          40.661854299999995
+        ]
       },
       "properties": {
         "tree_id": "NYC-AC-014",
-        "organization": "Friends of McGolrick Park",
-        "planted_date": "2023-06-10",
-        "health_status": "healthy",
-        "species": "Castanea dentata",
-        "contact": "info@mcgolrickpark.org",
-        "last_updated": "2024-10-20",
-        "notes": "Community stewardship program",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 4,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #4",
         "borough": "Brooklyn",
-        "location_description": "McGolrick Park"
+        "location_description": "PROSPECT PARK - Sugar Bowl"
       }
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-73.9509, 40.6551]
+        "coordinates": [
+          -73.97082900000001,
+          40.6622743
+        ]
       },
       "properties": {
         "tree_id": "NYC-AC-015",
         "organization": "Prospect Park Alliance",
-        "planted_date": "2021-09-25",
-        "health_status": "healthy",
-        "species": "Castanea dentata",
+        "tree_number": 5,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
         "contact": "info@prospectpark.org",
-        "last_updated": "2024-11-08",
-        "notes": "Part of woodland restoration initiative",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #5",
         "borough": "Brooklyn",
-        "location_description": "Prospect Park, Woodland Trail"
+        "location_description": "PROSPECT PARK - Sugar Bowl"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97082900000001,
+          40.662284299999996
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-016",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 5,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #5",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Peninsula"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.970809,
+          40.6620243
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-017",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 7,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #7",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Lookout Hill"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97052900000001,
+          40.6626743
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-018",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 8,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #8",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Lookout Hill"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.970859,
+          40.6624543
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-019",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 1,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #1",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - West Drive"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97096900000001,
+          40.6622543
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-020",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 2,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #2",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - West Drive"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97042900000001,
+          40.6618743
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-021",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 4,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #4",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - West Drive"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97082900000001,
+          40.662504299999995
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-022",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 5,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #5",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - West Drive"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.970489,
+          40.6624443
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-023",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 9,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #9",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - West Drive"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.970139,
+          40.6621643
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-024",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 10,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #10",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - West Drive"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97083900000001,
+          40.6626943
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-025",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 12,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #12",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - West Drive"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.970629,
+          40.6626543
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-026",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 13,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #13",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - West Drive"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9736531,
+          40.6670731
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-027",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 2,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #2",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Litchfield Villa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9735131,
+          40.6677631
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-028",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 5,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #5",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Litchfield Villa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9736931,
+          40.6676031
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-029",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 6,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #6",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Litchfield Villa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9734931,
+          40.6669131
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-030",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 7,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #7",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Litchfield Villa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97321310000001,
+          40.666993100000006
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-031",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 8,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #8",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Litchfield Villa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9728231,
+          40.667413100000005
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-032",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 10,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #10",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Litchfield Villa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9733131,
+          40.6674931
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-033",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 13,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #13",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Litchfield Villa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9735131,
+          40.667523100000004
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-034",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 14,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #14",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Litchfield Villa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9731331,
+          40.6671531
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-035",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 15,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #15",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Litchfield Villa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97321310000001,
+          40.6674231
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-036",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 17,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #17",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Litchfield Villa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9728631,
+          40.6675831
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-037",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 18,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #18",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Litchfield Villa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9729631,
+          40.6677231
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-038",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 21,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #21",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Litchfield Villa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9727931,
+          40.6672731
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-039",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 23,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #23",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Litchfield Villa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9730831,
+          40.667813100000004
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-040",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 24,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #24",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Litchfield Villa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9731731,
+          40.667863100000005
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-041",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 25,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #25",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Litchfield Villa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9736831,
+          40.667463100000006
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-042",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 26,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #26",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Litchfield Villa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97280310000001,
+          40.667863100000005
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-043",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 27,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #27",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Litchfield Villa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9730031,
+          40.6670931
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-044",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 28,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #28",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Litchfield Villa"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9788606,
+          40.661364899999995
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-045",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 1,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #1",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Bartel-Pritchard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97838060000001,
+          40.6606349
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-046",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 3,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #3",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Bartel-Pritchard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9784906,
+          40.661274899999995
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-047",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 9,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #9",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Bartel-Pritchard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9781406,
+          40.6608149
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-048",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 10,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #10",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Bartel-Pritchard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9784106,
+          40.660784899999996
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-049",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 11,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #11",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Bartel-Pritchard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97884060000001,
+          40.6612049
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-050",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 12,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #12",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Bartel-Pritchard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97883060000001,
+          40.6613049
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-051",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 14,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #14",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Bartel-Pritchard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97853060000001,
+          40.6607549
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-052",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 17,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #17",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Bartel-Pritchard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9781806,
+          40.661344899999996
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-053",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 18,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #18",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Bartel-Pritchard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9783306,
+          40.6610149
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-054",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 19,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #19",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Bartel-Pritchard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9790406,
+          40.661454899999995
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-055",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 20,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #20",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Bartel-Pritchard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9789106,
+          40.660694899999996
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-056",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 22,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #22",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Bartel-Pritchard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97811060000001,
+          40.6613249
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-057",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 23,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #23",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Bartel-Pritchard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97812060000001,
+          40.6613249
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-058",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 27,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #27",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Bartel-Pritchard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9788106,
+          40.6605649
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-059",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 32,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #32",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Bartel-Pritchard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9784606,
+          40.6609249
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-060",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 33,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #33",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Bartel-Pritchard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9782206,
+          40.6605949
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-061",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 34,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #34",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Bartel-Pritchard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97037900000001,
+          40.6622243
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-062",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 3,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #3",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Wellhouse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97052900000001,
+          40.662524299999994
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-063",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 8,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #8",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Wellhouse"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97042900000001,
+          40.6617943
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-064",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 4,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #4",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Vail"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97082900000001,
+          40.6627143
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-065",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 5,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #5",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Vail"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97100900000001,
+          40.6617943
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-066",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 6,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #6",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - PPW/8th St."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97096900000001,
+          40.662034299999995
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-067",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 2,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #2",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Breeze Hill"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.970859,
+          40.6620843
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-068",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 1,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #1",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Lefferts Homestead"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97096900000001,
+          40.6624343
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-069",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 2,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #2",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Lefferts Homestead"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.970859,
+          40.6617943
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-070",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 1,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #1",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Quaker Cemetery"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97096900000001,
+          40.6627643
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-071",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 2,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #2",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - Quaker Cemetery"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97096900000001,
+          40.6624443
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-072",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 2,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #2",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - GAP Berms"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.970709,
+          40.6622043
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-073",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 16,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #16",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - GAP Berms"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.970809,
+          40.6619543
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-074",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 7,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #7",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - GAP Berms"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.970489,
+          40.6626243
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-075",
+        "organization": "Prospect Park Alliance",
+        "tree_number": 9,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "info@prospectpark.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #9",
+        "borough": "Brooklyn",
+        "location_description": "PROSPECT PARK - GAP Berms"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.96324609999999,
+          40.6685119
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-076",
+        "organization": "Brooklyn Botanic Garden",
+        "tree_number": 1,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "conservation@bbg.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #1",
+        "borough": "Brooklyn",
+        "location_description": "BROOKLYN BOTANIC GARDEN - Native Flora Garden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9628861,
+          40.668571899999996
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-077",
+        "organization": "Brooklyn Botanic Garden",
+        "tree_number": 2,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "conservation@bbg.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #2",
+        "borough": "Brooklyn",
+        "location_description": "BROOKLYN BOTANIC GARDEN - Native Flora Garden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9635061,
+          40.6676719
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-078",
+        "organization": "Brooklyn Botanic Garden",
+        "tree_number": 3,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "conservation@bbg.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #3",
+        "borough": "Brooklyn",
+        "location_description": "BROOKLYN BOTANIC GARDEN - Native Flora Garden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.96333609999999,
+          40.668591899999996
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-079",
+        "organization": "Brooklyn Botanic Garden",
+        "tree_number": 4,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "conservation@bbg.org",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #4",
+        "borough": "Brooklyn",
+        "location_description": "BROOKLYN BOTANIC GARDEN - Native Flora Garden"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9849905,
+          40.6741661
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-080",
+        "organization": "NYC Parks",
+        "tree_number": 1,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "forestry@parks.nyc.gov",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #1",
+        "borough": "Brooklyn",
+        "location_description": "WASHINGTON PARK - Old School House"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9845105,
+          40.673746099999995
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-081",
+        "organization": "NYC Parks",
+        "tree_number": 2,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "forestry@parks.nyc.gov",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #2",
+        "borough": "Brooklyn",
+        "location_description": "WASHINGTON PARK - Old School House"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9849905,
+          40.6736161
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-082",
+        "organization": "NYC Parks",
+        "tree_number": 1,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "forestry@parks.nyc.gov",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #1",
+        "borough": "Brooklyn",
+        "location_description": "WASHINGTON PARK - Vanderbilt Playground"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9849905,
+          40.6735261
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-083",
+        "organization": "NYC Parks",
+        "tree_number": 1,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "forestry@parks.nyc.gov",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #1",
+        "borough": "Brooklyn",
+        "location_description": "WASHINGTON PARK - Lefferts Homestead"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9845105,
+          40.6738761
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-084",
+        "organization": "NYC Parks",
+        "tree_number": 2,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "forestry@parks.nyc.gov",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #2",
+        "borough": "Brooklyn",
+        "location_description": "WASHINGTON PARK - Lefferts Homestead"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9849905,
+          40.6734861
+        ]
+      },
+      "properties": {
+        "tree_id": "NYC-AC-085",
+        "organization": "NYC Parks",
+        "tree_number": 1,
+        "planted_date": "2020-01-01",
+        "health_status": "unknown",
+        "contact": "forestry@parks.nyc.gov",
+        "last_updated": "2024-12-20",
+        "notes": "Tree #1",
+        "borough": "Brooklyn",
+        "location_description": "WASHINGTON PARK - PPW/7th St."
       }
     }
   ]
