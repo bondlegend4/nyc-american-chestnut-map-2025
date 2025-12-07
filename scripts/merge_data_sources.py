@@ -166,9 +166,15 @@ def extract_tree_number_from_name(name: str) -> Optional[int]:
     return None
 
 
-def merge_data_sources(arcgis_path: str, excel_path: str, output_path: str):
+def merge_data_sources(arcgis_path: str, excel_path: str, output_path: str, original_path: str = None):
     """
-    Merge ArcGIS and Excel data sources.
+    Merge ArcGIS, Excel, and original data sources.
+
+    Args:
+        arcgis_path: Path to ArcGIS JSON file (new coordinates)
+        excel_path: Path to Excel file (health surveys)
+        output_path: Path for merged output
+        original_path: Path to original trees.json (to preserve growth_data, etc.)
     """
     print("\n=== Data Source Merger ===\n")
 
@@ -177,6 +183,19 @@ def merge_data_sources(arcgis_path: str, excel_path: str, output_path: str):
     with open(arcgis_path, 'r') as f:
         arcgis_data = json.load(f)
     print(f"  Loaded {len(arcgis_data['features'])} trees from ArcGIS")
+
+    # Load original data to preserve growth_data and other features
+    original_data = {}
+    if original_path:
+        print(f"Loading original data from: {original_path}")
+        with open(original_path, 'r') as f:
+            original_json = json.load(f)
+        # Index by tree_number for matching
+        for feature in original_json['features']:
+            tree_num = feature['properties'].get('tree_number')
+            if tree_num:
+                original_data[tree_num] = feature['properties']
+        print(f"  Loaded {len(original_data)} trees from original data")
 
     # Parse Excel health data
     excel_health = parse_excel_health_data(excel_path)
@@ -211,6 +230,7 @@ def merge_data_sources(arcgis_path: str, excel_path: str, output_path: str):
         if health_from_notes['status'] != 'unknown':
             props['health_status'] = health_from_notes['status']
             props['health_notes'] = health_from_notes['full_note']
+            props['health_detail'] = health_from_notes['original']  # Preserve original description
             if health_from_notes['date']:
                 props['health_date'] = health_from_notes['date']
             health_from_arcgis_notes += 1
@@ -225,6 +245,7 @@ def merge_data_sources(arcgis_path: str, excel_path: str, output_path: str):
             if excel_tree['health']:
                 props['health_status'] = standardize_health_status(excel_tree['health'])
                 props['health_notes'] = f"Excel 2024: {excel_tree['health']}"
+                props['health_detail'] = excel_tree['health']  # Preserve original description
                 health_updated += 1
 
             # Add survey measurements from Excel
@@ -239,7 +260,33 @@ def merge_data_sources(arcgis_path: str, excel_path: str, output_path: str):
             if excel_tree['location'] and excel_tree['location'] != excel_tree['area']:
                 props['location_detail'] = excel_tree['location']
 
-        # Set default organization to TACF
+        # Priority 3: Restore data from original dataset (growth_data, borough, etc.)
+        if tree_number and tree_number in original_data:
+            original = original_data[tree_number]
+
+            # Restore growth_data (critical for growth charts)
+            if 'growth_data' in original:
+                props['growth_data'] = original['growth_data']
+
+            # Restore health_detail if not already set
+            if 'health_detail' not in props and 'health_detail' in original:
+                props['health_detail'] = original['health_detail']
+
+            # Restore borough
+            if 'borough' in original:
+                props['borough'] = original['borough']
+
+            # Keep original organization if it's more specific than TACF default
+            if original.get('organization') not in ['Unknown Organization', '', None]:
+                # Only override if ArcGIS doesn't have good organization data
+                if props.get('organization') in ['TACF', '', None] and original.get('organization') != 'TACF':
+                    props['organization'] = original['organization']
+
+            # Keep original contact if more specific
+            if original.get('contact') and 'tacf' not in original.get('contact', '').lower():
+                props['contact'] = original['contact']
+
+        # Set default organization to TACF (only if still not set)
         if props.get('organization') in ['Unknown Organization', '', None]:
             props['organization'] = 'TACF'
 
@@ -305,7 +352,7 @@ def merge_data_sources(arcgis_path: str, excel_path: str, output_path: str):
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Merge ArcGIS and Excel data sources for NYC American Chestnut map'
+        description='Merge ArcGIS, Excel, and original data sources for NYC American Chestnut map'
     )
     parser.add_argument(
         '--arcgis',
@@ -318,6 +365,10 @@ def main():
         help='Path to Excel file with health data (input)'
     )
     parser.add_argument(
+        '--original',
+        help='Path to original trees.json to preserve growth_data and other features (optional)'
+    )
+    parser.add_argument(
         '--output',
         required=True,
         help='Path for merged output JSON file'
@@ -325,7 +376,7 @@ def main():
 
     args = parser.parse_args()
 
-    merge_data_sources(args.arcgis, args.excel, args.output)
+    merge_data_sources(args.arcgis, args.excel, args.output, args.original)
 
 
 if __name__ == '__main__':

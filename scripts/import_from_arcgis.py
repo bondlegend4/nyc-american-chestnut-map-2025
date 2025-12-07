@@ -400,6 +400,9 @@ def convert_feature_to_tree(feature, tree_counter):
     location_desc = find_field_value(attrs, FIELD_MAPPING['location_description'])
     contact = find_field_value(attrs, FIELD_MAPPING['contact'])
 
+    # Extract Name field from ArcGIS (e.g., "LV 05", "BBG 01")
+    name = find_field_value(attrs, ['Name', 'name', 'NAME'])
+
     # Extract park/area for validation
     park = find_field_value(attrs, FIELD_MAPPING['park'])
     area = find_field_value(attrs, FIELD_MAPPING['area'])
@@ -467,6 +470,9 @@ def convert_feature_to_tree(feature, tree_counter):
     }
 
     # Add optional fields
+    if name:
+        tree['properties']['name'] = name
+
     if growth_data:
         tree['properties']['growth_data'] = growth_data
 
