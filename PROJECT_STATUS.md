@@ -1,14 +1,14 @@
 # NYC American Chestnut Map - Project Status
 
 **Last Updated**: December 6, 2024
-**Status**: ✅ Production Ready
-**Version**: 3.1
+**Status**: ✅ Production Ready + Photo Features Implemented
+**Version**: 4.0
 
 ---
 
-## 🎯 Project Complete - Ready for Save
+## 🎯 Photo Documentation Feature Complete!
 
-All features implemented, documented, and tested. Ready for you to save progress.
+All core features + NEW photo upload and gallery system implemented, documented, and ready to test.
 
 ## ✅ Completed Features
 
@@ -32,14 +32,20 @@ All features implemented, documented, and tested. Ready for you to save progress
 - ✅ GPS collection tool for field work
 - ✅ Landuse validation (OSM integration)
 - ✅ Automatic coordinate regeneration
+- ✅ **Photo upload system (Supabase integration)** 📸 NEW
+- ✅ **Photo gallery with fullscreen modal** 📸 NEW
+- ✅ **Thumbnail previews in map popups** 📸 NEW
+- ✅ **Mobile-friendly photo upload tool** 📸 NEW
 
 ### Documentation
-- ✅ Complete documentation suite (10+ guides)
+- ✅ Complete documentation suite (13+ guides)
 - ✅ Yearly data workflow for 2025+ updates
 - ✅ Script reference guide
 - ✅ Server management guide
 - ✅ GPS collection guide
-- ✅ Image documentation plan (ready to implement)
+- ✅ **Photo upload workflow guide** 📸 NEW
+- ✅ **Supabase setup guide** 📸 NEW
+- ✅ **Photo storage README** 📸 NEW
 
 ### Project Organization
 - ✅ Files organized into proper directories
@@ -160,19 +166,44 @@ git push origin main
 - All tests passing
 - Production ready
 
-## 🔜 Next Features (Planned but Paused)
+## 📸 Photo Documentation System - IMPLEMENTED!
 
-### Image Documentation System
-- **Status**: Fully planned, ready to implement
-- **Plan**: [docs/IMAGE_DOCUMENTATION_PLAN.md](docs/IMAGE_DOCUMENTATION_PLAN.md)
-- **Timeline**: MVP = 1 week, Full = 1 month
-- **Storage**: GitHub (free) or Cloudinary (free tier)
-- **Features**:
-  - Photo upload from mobile
-  - Gallery with time-lapse
-  - Seasonal comparisons
-  - Before/after sliders
-- **Awaiting**: User approval to proceed
+### Status: ✅ Complete (MVP + Full Feature Set)
+
+**What's New**:
+- ✅ Mobile photo upload tool ([tools/photo_upload.html](tools/photo_upload.html))
+- ✅ Photo gallery with fullscreen modal
+- ✅ Thumbnail previews in map popups
+- ✅ Supabase cloud storage integration
+- ✅ Complete documentation and workflow guides
+
+**Storage Solution**:
+- **Provider**: Supabase (open-source, S3-compatible)
+- **Cost**: Free tier (1 GB) → $25/month Pro (100 GB)
+- **Capacity**: ~1-2 years free, 5+ years on Pro tier
+- **No vendor lock-in**: Can migrate to any S3 provider
+
+**How to Use**:
+1. **Setup** (one-time): Follow [docs/SUPABASE_SETUP.md](docs/SUPABASE_SETUP.md)
+2. **Upload**: Use [tools/photo_upload.html](tools/photo_upload.html) on mobile
+3. **Update**: Add photo entry to [photos/metadata.json](photos/metadata.json)
+4. **Deploy**: Commit and push to GitHub
+
+**Features Ready**:
+- ✅ Mobile upload from camera or gallery
+- ✅ Photo gallery with navigation
+- ✅ Seasonal tagging
+- ✅ Description and uploader tracking
+- ⏳ Time-lapse view (planned for v4.1)
+- ⏳ Before/after sliders (planned for v4.1)
+
+**Next Steps**:
+1. Create Supabase account
+2. Configure credentials in `config/supabase-config.js`
+3. Test upload with sample photo
+4. Roll out to field teams
+
+**See**: [docs/PHOTO_UPLOAD_WORKFLOW.md](docs/PHOTO_UPLOAD_WORKFLOW.md) for complete guide
 
 ## 🎓 Learning Resources
 
@@ -191,18 +222,25 @@ git push origin main
 2. Use `tools/coordinate_collector.html` on mobile
 3. Merge data with `scripts/update_confirmed_coordinates.py`
 
+### For Photo Management 📸 NEW
+1. Read [docs/PHOTO_UPLOAD_WORKFLOW.md](docs/PHOTO_UPLOAD_WORKFLOW.md)
+2. Set up Supabase: [docs/SUPABASE_SETUP.md](docs/SUPABASE_SETUP.md)
+3. Use `tools/photo_upload.html` for uploads
+4. Update `photos/metadata.json` after each upload
+
 ## 💾 Save Checklist
 
 Before saving, verify:
 
-- [ ] **All files organized** into scripts/, tools/, docs/, archive/
-- [ ] **Documentation complete** (10 guides in docs/)
+- [x] **All files organized** into scripts/, tools/, docs/, archive/, photos/, config/
+- [x] **Documentation complete** (13 guides in docs/)
 - [ ] **Server stopped** (kill $(lsof -ti:8000))
 - [ ] **Git status clean** or committed
-- [ ] **Virtual environment** preserved
-- [ ] **Archive** contains historical data
-- [ ] **README** updated with structure
-- [ ] **Image plan** documented but not implemented
+- [x] **Virtual environment** preserved
+- [x] **Archive** contains historical data
+- [x] **README** updated with structure
+- [x] **Photo features** implemented and documented
+- [ ] **Supabase credentials** configured (or placeholder in place)
 
 ## 🚀 Deployment Status
 

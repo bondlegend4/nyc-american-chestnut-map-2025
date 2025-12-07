@@ -16,6 +16,8 @@ Complete guide to the NYC American Chestnut Conservation Map project.
 - **[COORDINATE_ACCURACY_SYSTEM.md](COORDINATE_ACCURACY_SYSTEM.md)** - Boundary validation & accuracy badges
 - **[LANDUSE_VALIDATION.md](LANDUSE_VALIDATION.md)** - Optional OSM validation (buildings/water/sports)
 - **[GPS_COLLECTION_GUIDE.md](GPS_COLLECTION_GUIDE.md)** - Field GPS collection workflow
+- **[PHOTO_UPLOAD_WORKFLOW.md](PHOTO_UPLOAD_WORKFLOW.md)** - Photo upload and gallery system ✨ **NEW**
+- **[SUPABASE_SETUP.md](SUPABASE_SETUP.md)** - Supabase storage configuration
 
 ### Implementation Notes
 - **[GROWTH_CHARTS_ADDED.md](GROWTH_CHARTS_ADDED.md)** - Multi-year growth chart feature
@@ -41,8 +43,15 @@ nyc-american-chestnut-map-2025/
 │
 ├── tools/                                 # Utility tools
 │   ├── coordinate_collector.html         # Mobile GPS collection
+│   ├── photo_upload.html                 # Mobile photo upload ✨ NEW
 │   ├── landuse_validator.py             # OSM API validation
 │   └── generate_map.py                   # Legacy CSV converter
+│
+├── photos/                                # Photo storage ✨ NEW
+│   └── metadata.json                     # Photo metadata (URLs to Supabase)
+│
+├── config/                                # Configuration ✨ NEW
+│   └── supabase-config.js                # Supabase credentials
 │
 ├── docs/                                  # Documentation
 │   ├── DOCUMENTATION_INDEX.md            # This file

@@ -1,0 +1,12 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2024-12-06",
+    "total_photos": 0,
+    "trees_with_photos": 0,
+    "storage_provider": "supabase",
+    "storage_url": "https://supabase.co/storage/v1/object/public/tree-photos/",
+    "note": "Photos are stored externally on Supabase. This file only contains URLs and metadata."
+  },
+  "photos": []
+}

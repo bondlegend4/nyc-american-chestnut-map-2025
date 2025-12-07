@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Tree Photo - NYC American Chestnut Map</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #2c5f2d 0%, #97c680 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+
+        .header {
+            background: #2c5f2d;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #2c5f2d;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .photo-input-wrapper {
+            position: relative;
+            border: 2px dashed #ddd;
+            border-radius: 6px;
+            padding: 40px 20px;
+            text-align: center;
+            background: #f8f9fa;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .photo-input-wrapper:hover {
+            border-color: #2c5f2d;
+            background: #e9f5e9;
+        }
+
+        .photo-input-wrapper.has-file {
+            border-color: #28a745;
+            background: #d4edda;
+        }
+
+        input[type="file"] {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+        }
+
+        .photo-icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .photo-preview {
+            max-width: 100%;
+            max-height: 300px;
+            margin-top: 15px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .photo-preview.show {
+            display: block;
+        }
+
+        .file-info {
+            margin-top: 10px;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 8px;
+        }
+
+        .checkbox-group label {
+            margin: 0;
+            font-weight: normal;
+            font-size: 13px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: #2c5f2d;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            background: #234d24;
+        }
+
+        .submit-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .alert {
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .alert.show {
+            display: block;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .alert-info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 20px;
+            display: none;
+        }
+
+        .loading.show {
+            display: block;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #2c5f2d;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .help-text {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        .required {
+            color: #dc3545;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #2c5f2d;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📷 Upload Tree Photo</h1>
+            <p>NYC American Chestnut Conservation Map</p>
+        </div>
+
+        <div class="content">
+            <div id="alertBox" class="alert"></div>
+
+            <div id="loadingBox" class="loading">
+                <div class="spinner"></div>
+                <p>Uploading photo...</p>
+            </div>
+
+            <form id="uploadForm">
+                <div class="form-group">
+                    <label for="treeId">Tree ID <span class="required">*</span></label>
+                    <input type="text" id="treeId" name="treeId" required placeholder="e.g., NYC-AC-001">
+                    <div class="help-text">Find the Tree ID on the map marker popup</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="photoFile">Photo <span class="required">*</span></label>
+                    <div class="photo-input-wrapper" id="photoWrapper">
+                        <input type="file" id="photoFile" name="photoFile" accept="image/jpeg,image/png,image/webp" required>
+                        <div class="photo-icon">📷</div>
+                        <p><strong>Click to take photo or choose from gallery</strong></p>
+                        <p class="help-text">Max file size: 5 MB • JPEG, PNG, WebP</p>
+                        <div class="file-info" id="fileInfo"></div>
+                    </div>
+                    <img id="photoPreview" class="photo-preview" alt="Photo preview">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" placeholder="Describe the photo (e.g., Healthy growth, 15' tall, flowering)"></textarea>
+                    <div class="help-text">Optional - add any observations about the tree</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="uploaderName">Your Name <span class="required">*</span></label>
+                    <input type="text" id="uploaderName" name="uploaderName" required placeholder="Jane Smith">
+                </div>
+
+                <div class="form-group">
+                    <label for="uploaderEmail">Your Email</label>
+                    <input type="email" id="uploaderEmail" name="uploaderEmail" placeholder="jane@example.com">
+                    <div class="help-text">Optional - for follow-up questions</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="season">Season</label>
+                    <select id="season" name="season">
+                        <option value="">Auto-detect</option>
+                        <option value="spring">Spring</option>
+                        <option value="summer">Summer</option>
+                        <option value="fall">Fall</option>
+                        <option value="winter">Winter</option>
+                    </select>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="confirmTree" name="confirmTree" required>
+                    <label for="confirmTree">I confirm this photo is of the correct tree <span class="required">*</span></label>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <button type="submit" class="submit-btn" id="submitBtn">📤 Upload Photo</button>
+                </div>
+            </form>
+
+            <a href="../index.html" class="back-link">← Back to Map</a>
+        </div>
+    </div>
+
+    <script src="../config/supabase-config.js"></script>
+    <script>
+        // Get tree ID from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const treeIdParam = urlParams.get('tree_id');
+        if (treeIdParam) {
+            document.getElementById('treeId').value = treeIdParam;
+        }
+
+        // Photo preview
+        const photoInput = document.getElementById('photoFile');
+        const photoPreview = document.getElementById('photoPreview');
+        const photoWrapper = document.getElementById('photoWrapper');
+        const fileInfo = document.getElementById('fileInfo');
+
+        photoInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                // Validate file size
+                if (file.size > 5 * 1024 * 1024) {
+                    showAlert('error', 'File is too large. Maximum size is 5 MB.');
+                    photoInput.value = '';
+                    return;
+                }
+
+                // Show preview
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    photoPreview.src = event.target.result;
+                    photoPreview.classList.add('show');
+                    photoWrapper.classList.add('has-file');
+                    fileInfo.textContent = `${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Auto-detect season
+        function detectSeason() {
+            const month = new Date().getMonth() + 1;
+            if (month >= 3 && month <= 5) return 'spring';
+            if (month >= 6 && month <= 8) return 'summer';
+            if (month >= 9 && month <= 11) return 'fall';
+            return 'winter';
+        }
+
+        // Form submission
+        const uploadForm = document.getElementById('uploadForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const loadingBox = document.getElementById('loadingBox');
+
+        uploadForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const treeId = document.getElementById('treeId').value.trim();
+            const photoFile = document.getElementById('photoFile').files[0];
+            const description = document.getElementById('description').value.trim();
+            const uploaderName = document.getElementById('uploaderName').value.trim();
+            const uploaderEmail = document.getElementById('uploaderEmail').value.trim();
+            const season = document.getElementById('season').value || detectSeason();
+
+            if (!photoFile) {
+                showAlert('error', 'Please select a photo to upload.');
+                return;
+            }
+
+            // Initialize Supabase
+            const client = initSupabase();
+            if (!client) {
+                showAlert('error', 'Supabase is not configured. Please set up your Supabase credentials in config/supabase-config.js');
+                return;
+            }
+
+            // Show loading
+            submitBtn.disabled = true;
+            loadingBox.classList.add('show');
+
+            try {
+                // Generate filename
+                const timestamp = new Date().toISOString().split('T')[0];
+                const randomId = Math.random().toString(36).substring(2, 8);
+                const fileExt = photoFile.name.split('.').pop();
+                const fileName = `${timestamp}_${randomId}.${fileExt}`;
+                const filePath = `${treeId}/${fileName}`;
+
+                // Upload to Supabase Storage
+                const { data: uploadData, error: uploadError } = await client.storage
+                    .from(SUPABASE_CONFIG.bucketName)
+                    .upload(filePath, photoFile, {
+                        cacheControl: '3600',
+                        upsert: false
+                    });
+
+                if (uploadError) {
+                    throw new Error(`Upload failed: ${uploadError.message}`);
+                }
+
+                // Get public URL
+                const { data: urlData } = client.storage
+                    .from(SUPABASE_CONFIG.bucketName)
+                    .getPublicUrl(filePath);
+
+                const photoUrl = urlData.publicUrl;
+
+                // Create metadata entry
+                const photoMetadata = {
+                    photo_id: `${treeId}_${timestamp}_${randomId}`,
+                    tree_id: treeId,
+                    filename: fileName,
+                    url: photoUrl,
+                    thumbnail_url: photoUrl, // TODO: Generate actual thumbnail
+                    uploaded_date: new Date().toISOString(),
+                    uploaded_by: uploaderName,
+                    uploader_email: uploaderEmail || null,
+                    description: description || null,
+                    season: season,
+                    tags: [],
+                    file_size: photoFile.size
+                };
+
+                // TODO: Save metadata to metadata.json or database
+                // For now, just show success message with instructions
+
+                showAlert('success', `Photo uploaded successfully! Photo URL: ${photoUrl}`);
+
+                // Show instructions
+                setTimeout(() => {
+                    showAlert('info',
+                        'IMPORTANT: To make this photo appear on the map, you need to:\n\n' +
+                        '1. Add this entry to photos/metadata.json:\n\n' +
+                        JSON.stringify(photoMetadata, null, 2) + '\n\n' +
+                        '2. Commit and push the changes to GitHub.'
+                    );
+                }, 2000);
+
+                // Reset form
+                uploadForm.reset();
+                photoPreview.classList.remove('show');
+                photoWrapper.classList.remove('has-file');
+                fileInfo.textContent = '';
+
+            } catch (error) {
+                console.error('Upload error:', error);
+                showAlert('error', error.message);
+            } finally {
+                submitBtn.disabled = false;
+                loadingBox.classList.remove('show');
+            }
+        });
+
+        function showAlert(type, message) {
+            const alertBox = document.getElementById('alertBox');
+            alertBox.className = `alert alert-${type} show`;
+            alertBox.textContent = message;
+            alertBox.style.whiteSpace = 'pre-wrap';
+
+            // Auto-hide after 10 seconds for success messages
+            if (type === 'success') {
+                setTimeout(() => {
+                    alertBox.classList.remove('show');
+                }, 10000);
+            }
+        }
+    </script>
+</body>
+</html>
