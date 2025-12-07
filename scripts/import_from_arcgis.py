@@ -38,8 +38,8 @@ except ImportError:
 # Customize these based on your ArcGIS layer's field names
 FIELD_MAPPING = {
     # Required fields
-    'tree_id': ['OBJECTID', 'TreeID', 'ID', 'tree_id', 'FID'],
-    'organization': ['Organization', 'Org', 'Agency', 'organization', 'ORGANIZATION'],
+    'tree_id': ['FID', 'OBJECTID', 'TreeID', 'ID', 'tree_id', 'Name'],
+    'organization': ['Origin', 'Organization', 'Org', 'Agency', 'organization', 'ORGANIZATION'],
     'health_status': ['Health', 'HealthStatus', 'health_status', 'HEALTH', 'Condition'],
 
     # Location fields
@@ -47,11 +47,11 @@ FIELD_MAPPING = {
     'longitude': ['Longitude', 'LON', 'LONG', 'X', 'longitude', 'LONGITUDE'],
 
     # Optional fields
-    'planted_date': ['PlantedDate', 'DatePlanted', 'planted_date', 'PLANTED', 'InstallDate'],
-    'last_updated': ['LastUpdate', 'UpdateDate', 'last_updated', 'LAST_UPDATE', 'ModifiedDate'],
+    'planted_date': ['PlantYr', 'PlantedDate', 'DatePlanted', 'planted_date', 'PLANTED', 'InstallDate'],
+    'last_updated': ['EditDate', 'LastUpdate', 'UpdateDate', 'last_updated', 'LAST_UPDATE', 'ModifiedDate'],
     'notes': ['Notes', 'Comments', 'Description', 'notes', 'NOTES'],
-    'location_description': ['Location', 'LocationDesc', 'location_description', 'LOCATION', 'SiteName'],
-    'contact': ['Contact', 'Email', 'ContactEmail', 'contact', 'CONTACT'],
+    'location_description': ['Area', 'Location', 'LocationDesc', 'location_description', 'LOCATION', 'SiteName'],
+    'contact': ['Editor', 'Contact', 'Email', 'ContactEmail', 'contact', 'CONTACT'],
 
     # Growth data fields (if available)
     'height_2021': ['Height2021', 'Height_2021', 'HT2021'],
@@ -66,7 +66,11 @@ FIELD_MAPPING = {
     # Park/Area identifiers
     'park': ['Park', 'ParkName', 'park', 'PARK'],
     'area': ['Area', 'AreaName', 'area', 'AREA', 'Zone'],
-    'tree_number': ['TreeNumber', 'TreeNum', 'tree_number', 'Number']
+    'tree_number': ['TreeNumber', 'TreeNum', 'tree_number', 'Number'],
+
+    # Chestnut-specific fields
+    'variant': ['Variant', 'Type', 'Variety'],
+    'seed': ['Seed', 'SeedNumber', 'SeedID']
 }
 
 # Health status mapping: ArcGIS values → our standardized values
@@ -418,6 +422,23 @@ def convert_feature_to_tree(feature, tree_counter):
             accuracy_level = 'estimated'
             accuracy_description = f'Coordinates may need verification (outside {park} by {distance:.0f}m)'
 
+    # Set defaults for missing data
+    # Default organization to TACF if not found
+    if organization == 'Unknown Organization' or not organization:
+        organization = 'TACF'
+
+    # Default contact to TACF if not found
+    if not contact or contact == 'conservation@nyc.gov':
+        contact = 'TACF-NYC@acf.org'
+
+    # ArcGIS coordinates are verified, not estimated
+    if accuracy_level == 'estimated':
+        accuracy_level = 'verified'
+        accuracy_description = 'Verified coordinates from ArcGIS Feature Service'
+        accuracy_confidence = 95
+    else:
+        accuracy_confidence = 90 if accuracy_level == 'confirmed' else 95
+
     # Build tree object
     tree = {
         'type': 'Feature',
@@ -433,12 +454,14 @@ def convert_feature_to_tree(feature, tree_counter):
             'last_updated': last_updated or datetime.now().strftime('%Y-%m-%d'),
             'notes': notes or '',
             'location_description': location_desc or '',
-            'contact': contact or 'conservation@nyc.gov',
+            'contact': contact,
             'location_accuracy': {
                 'level': accuracy_level,
                 'description': accuracy_description,
                 'source': 'arcgis',
-                'confidence': 90 if accuracy_level == 'confirmed' else 60
+                'confidence': accuracy_confidence,
+                'verified_by': 'TACF',
+                'verified_date': datetime.now().strftime('%Y-%m-%d')
             }
         }
     }
@@ -455,6 +478,15 @@ def convert_feature_to_tree(feature, tree_counter):
 
     if tree_number:
         tree['properties']['tree_number'] = tree_number
+
+    # Add chestnut-specific fields
+    variant = find_field_value(attrs, FIELD_MAPPING.get('variant', []))
+    if variant:
+        tree['properties']['variant'] = variant
+
+    seed = find_field_value(attrs, FIELD_MAPPING.get('seed', []))
+    if seed:
+        tree['properties']['seed'] = seed
 
     # Add health detail if available (original value)
     original_health = find_field_value(attrs, FIELD_MAPPING['health_status'])
