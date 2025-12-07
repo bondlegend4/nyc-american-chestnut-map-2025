@@ -11,6 +11,8 @@ Complete guide to the NYC American Chestnut Conservation Map project.
 ### Data Processing
 - **[YEARLY_DATA_WORKFLOW.md](YEARLY_DATA_WORKFLOW.md)** - Annual data update process ⭐ **START HERE FOR NEXT YEAR**
 - **[DATA_PROCESSING_SCRIPTS.md](DATA_PROCESSING_SCRIPTS.md)** - Script reference guide
+- **[ARCGIS_INTEGRATION.md](ARCGIS_INTEGRATION.md)** - Import data from ArcGIS Feature Services ✨ **NEW**
+- **[GIT_BRANCHING_STRATEGY.md](GIT_BRANCHING_STRATEGY.md)** - Feature branch management ✨ **NEW**
 
 ### Features
 - **[COORDINATE_ACCURACY_SYSTEM.md](COORDINATE_ACCURACY_SYSTEM.md)** - Boundary validation & accuracy badges
