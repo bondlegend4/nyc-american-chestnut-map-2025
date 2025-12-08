@@ -32,7 +32,7 @@
             position: fixed;
             top: 10px;
             left: 10px;
-            z-index: 1000;
+            z-index: 400;
             background: white;
             padding: 15px 20px;
             border-radius: 8px;
@@ -593,11 +593,21 @@
             });
         }
 
-        // Create marker cluster groups by organization
+        // Create marker cluster groups by organization and health
         const organizationLayers = {};
+        const healthLayers = {};
         const allTreesLayer = L.markerClusterGroup({
             chunkedLoading: true,
             maxClusterRadius: 50
+        });
+
+        // Initialize health status layers
+        const healthStatuses = ['healthy', 'good', 'fair', 'declining', 'poor', 'dead', 'unknown'];
+        healthStatuses.forEach(status => {
+            healthLayers[status] = L.markerClusterGroup({
+                chunkedLoading: true,
+                maxClusterRadius: 50
+            });
         });
 
         // Format date helper
@@ -948,10 +958,14 @@
             }
 
             return `
-                <h3>${props.organization || 'Unknown Organization'}</h3>
+                <h3>${props.name || props.tree_id || 'Unknown Tree'}</h3>
                 <div class="popup-row">
                     <span class="popup-label">Tree ID:</span>
                     <span class="popup-value">${props.tree_id || 'N/A'}</span>
+                </div>
+                <div class="popup-row">
+                    <span class="popup-label">Origin:</span>
+                    <span class="popup-value">${props.organization || 'Unknown'}</span>
                 </div>
                 <div class="popup-row">
                     <span class="popup-label">Health:</span>
@@ -1044,20 +1058,77 @@
                     allTreesLayer.addLayer(marker);
                     organizationLayers[org].addLayer(marker);
 
+                    // Add to health status layer
+                    const healthStatus = props.health_status || 'unknown';
+                    if (healthLayers[healthStatus]) {
+                        healthLayers[healthStatus].addLayer(marker);
+                    }
+
                     treeCount++;
                 });
 
                 // Add all trees layer to map by default
                 allTreesLayer.addTo(map);
 
+                // Function to consolidate organization names
+                function consolidateOrgName(org) {
+                    // Consolidate TACF variants
+                    if (org.includes('TACF')) {
+                        return 'TACF';
+                    }
+                    // Consolidate GW variants across years
+                    if (org.includes('GW') || org.includes('George Washington')) {
+                        return 'GW High School';
+                    }
+                    return org;
+                }
+
+                // Consolidate organization layers
+                const consolidatedOrgLayers = {};
+                Object.keys(organizationLayers).forEach(org => {
+                    const consolidatedName = consolidateOrgName(org);
+                    if (!consolidatedOrgLayers[consolidatedName]) {
+                        consolidatedOrgLayers[consolidatedName] = L.markerClusterGroup({
+                            chunkedLoading: true,
+                            maxClusterRadius: 50
+                        });
+                    }
+                    // Copy all markers from original org layer to consolidated layer
+                    organizationLayers[org].eachLayer(layer => {
+                        consolidatedOrgLayers[consolidatedName].addLayer(layer);
+                    });
+                });
+
                 // Create layer control
                 const overlays = {
-                    'All Trees': allTreesLayer
+                    '<strong>All Trees</strong>': allTreesLayer
                 };
 
-                // Add individual organization layers
-                Object.keys(organizationLayers).sort().forEach(org => {
-                    overlays[`${org} Trees`] = organizationLayers[org];
+                // Add separator
+                overlays['<hr style="margin: 5px 0;">'] = L.layerGroup();
+
+                // Add health status layers
+                overlays['<strong>By Health Status:</strong>'] = L.layerGroup();
+                const healthLabels = {
+                    'healthy': '🟢 Healthy',
+                    'good': '🟢 Good',
+                    'fair': '🟡 Fair',
+                    'declining': '🟠 Declining',
+                    'poor': '🔴 Poor',
+                    'dead': '⚫ Dead',
+                    'unknown': '⚪ Unknown'
+                };
+                healthStatuses.forEach(status => {
+                    overlays[healthLabels[status]] = healthLayers[status];
+                });
+
+                // Add separator
+                overlays['<hr style="margin: 5px 0;"> '] = L.layerGroup();
+
+                // Add consolidated organization layers
+                overlays['<strong>By Organization:</strong>'] = L.layerGroup();
+                Object.keys(consolidatedOrgLayers).sort().forEach(org => {
+                    overlays[org] = consolidatedOrgLayers[org];
                 });
 
                 L.control.layers(null, overlays, {
