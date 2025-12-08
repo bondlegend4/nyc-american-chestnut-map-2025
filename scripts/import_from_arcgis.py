@@ -394,7 +394,13 @@ def convert_feature_to_tree(feature, tree_counter):
     )
 
     # Extract optional fields
-    planted_date = parse_date(find_field_value(attrs, FIELD_MAPPING['planted_date']))
+    plant_yr_value = find_field_value(attrs, FIELD_MAPPING['planted_date'])
+    # Convert PlantYr to proper date format, or None if invalid/missing
+    if plant_yr_value and isinstance(plant_yr_value, (int, float)) and plant_yr_value > 1900:
+        planted_date = f"{int(plant_yr_value)}-01-01"  # Use January 1st of the planting year
+    else:
+        planted_date = None
+
     last_updated = parse_date(find_field_value(attrs, FIELD_MAPPING['last_updated']))
     notes = find_field_value(attrs, FIELD_MAPPING['notes'])
     location_desc = find_field_value(attrs, FIELD_MAPPING['location_description'])

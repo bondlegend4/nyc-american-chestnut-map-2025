@@ -13,13 +13,13 @@
         "type": "excel",
         "description": "Historical growth measurements (year-over-year)",
         "file": "archive/2024 year end chestnut results.xlsx",
-        "trees_with_growth": 60
+        "trees_with_growth": 61
       }
     ],
     "enhancement_stats": {
       "total_trees": 161,
       "health_from_arcgis_notes": 31,
-      "growth_history_added": 60
+      "growth_history_added": 61
     }
   },
   "features": [
@@ -36,7 +36,7 @@
         "tree_id": "NYC-AC-001",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "Unknown",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Brooklyn Botanic Garden",
@@ -68,7 +68,7 @@
         "tree_id": "NYC-AC-002",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "Unknown",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Brooklyn Botanic Garden",
@@ -100,7 +100,7 @@
         "tree_id": "NYC-AC-003",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "Unknown",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Brooklyn Botanic Garden",
@@ -132,7 +132,7 @@
         "tree_id": "NYC-AC-004",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "Unknown",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Brooklyn Botanic Garden",
@@ -164,7 +164,7 @@
         "tree_id": "NYC-AC-005",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2004-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Breeze Hill",
@@ -195,9 +195,9 @@
       "properties": {
         "tree_id": "NYC-AC-006",
         "organization": "Planted last year number 38 2023 GWNYPBR 2X4?",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-28",
+        "health_status": "healthy",
+        "planted_date": "2023-01-01",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Breeze Hill",
         "contact": "TACF-NYC@acf.org",
@@ -217,9 +217,18 @@
         "tree_number": 2,
         "growth_data": {
           "2024": {
-            "dbh": 1.7
+            "height": 1.7
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "healthy",
+            "detail": "very good",
+            "source": "excel"
+          }
+        },
+        "health_detail": "very good",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -236,7 +245,7 @@
         "tree_id": "NYC-AC-007",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2022-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Lefferts House",
@@ -269,7 +278,7 @@
         "tree_id": "NYC-AC-008",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2023-01-01",
         "last_updated": "2025-09-11",
         "notes": "",
         "location_description": "Lefferts House",
@@ -301,9 +310,9 @@
       "properties": {
         "tree_id": "NYC-AC-009",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "healthy",
+        "planted_date": "2014-01-01",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Litchfield Villa",
         "contact": "PPAarcgis",
@@ -333,9 +342,19 @@
             "dbh": 4.3
           },
           "2024": {
-            "dbh": 37.5
+            "height": 37.5,
+            "dbh": 4.5
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "healthy",
+            "detail": "excellent",
+            "source": "excel"
+          }
+        },
+        "health_detail": "excellent",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -352,8 +371,8 @@
         "tree_id": "NYC-AC-010",
         "organization": "TACF",
         "health_status": "healthy",
-        "planted_date": "1969-12-31",
-        "last_updated": "2024-11-25",
+        "planted_date": "2016-01-01",
+        "last_updated": "2025-11-25",
         "notes": "11/25 very good",
         "location_description": "PROSPECT PARK: Litchfield Villa",
         "contact": "TACF-NYC@acf.org",
@@ -368,8 +387,6 @@
         "name": "LV 05",
         "area": "Litchfield Villa",
         "variant": "Native",
-        "health_detail": "11/25 very good",
-        "last_survey_date": "2024-11-25",
         "excel_match": "Litchfield Villa #5",
         "tree_number": 5,
         "growth_data": {
@@ -383,9 +400,24 @@
             "height": 8.3
           },
           "2024": {
-            "dbh": 8.0
+            "height": 8.0,
+            "dbh": 0.5
           }
         },
+        "health_history": {
+          "2025-11-25": {
+            "status": "healthy",
+            "detail": "11/25 very good",
+            "source": "arcgis"
+          },
+          "2024-12-31": {
+            "status": "good",
+            "detail": "good",
+            "source": "excel"
+          }
+        },
+        "health_detail": "11/25 very good",
+        "last_survey_date": "2025-11-25",
         "borough": "Brooklyn"
       }
     },
@@ -402,8 +434,8 @@
         "tree_id": "NYC-AC-011",
         "organization": "PS321",
         "health_status": "healthy",
-        "planted_date": "1969-12-31",
-        "last_updated": "2024-11-25",
+        "planted_date": "2017-01-01",
+        "last_updated": "2025-11-25",
         "notes": "11/25 excellent, 13\u2019",
         "location_description": "PROSPECT PARK: Litchfield Villa",
         "contact": "TACF-NYC@acf.org",
@@ -418,8 +450,6 @@
         "name": "LV 06",
         "area": "Litchfield Villa",
         "variant": "Native",
-        "health_detail": "11/25 excellent, 13\u2019",
-        "last_survey_date": "2024-11-25",
         "excel_match": "Litchfield Villa #6",
         "tree_number": 6,
         "growth_data": {
@@ -433,9 +463,24 @@
             "height": 8.7
           },
           "2024": {
-            "dbh": 11.5
+            "height": 11.5,
+            "dbh": 0.75
           }
         },
+        "health_history": {
+          "2025-11-25": {
+            "status": "healthy",
+            "detail": "11/25 excellent, 13\u2019",
+            "source": "arcgis"
+          },
+          "2024-12-31": {
+            "status": "healthy",
+            "detail": "excellent",
+            "source": "excel"
+          }
+        },
+        "health_detail": "11/25 excellent, 13\u2019",
+        "last_survey_date": "2025-11-25",
         "borough": "Brooklyn"
       }
     },
@@ -452,8 +497,8 @@
         "tree_id": "NYC-AC-012",
         "organization": "TACF",
         "health_status": "declining",
-        "planted_date": "1969-12-31",
-        "last_updated": "2024-11-25",
+        "planted_date": "2016-01-01",
+        "last_updated": "2025-11-25",
         "notes": "11/25 some blight, coppising",
         "location_description": "PROSPECT PARK: Litchfield Villa",
         "contact": "TACF-NYC@acf.org",
@@ -469,8 +514,6 @@
         "area": "Litchfield Villa",
         "variant": "PBR",
         "seed": 61,
-        "health_detail": "11/25 some blight, coppising",
-        "last_survey_date": "2024-11-25",
         "excel_match": "Litchfield Villa #7",
         "tree_number": 7,
         "growth_data": {
@@ -484,9 +527,23 @@
             "height": 6.3
           },
           "2024": {
-            "dbh": 7.3
+            "height": 7.3
           }
         },
+        "health_history": {
+          "2025-11-25": {
+            "status": "declining",
+            "detail": "11/25 some blight, coppising",
+            "source": "arcgis"
+          },
+          "2024-12-31": {
+            "status": "declining",
+            "detail": "multi stem - blight",
+            "source": "excel"
+          }
+        },
+        "health_detail": "11/25 some blight, coppising",
+        "last_survey_date": "2025-11-25",
         "borough": "Brooklyn"
       }
     },
@@ -503,8 +560,8 @@
         "tree_id": "NYC-AC-013",
         "organization": "TACF",
         "health_status": "dead",
-        "planted_date": "1969-12-31",
-        "last_updated": "2024-11-25",
+        "planted_date": "2017-01-01",
+        "last_updated": "2025-11-25",
         "notes": "11/25 cannot find. Gone",
         "location_description": "PROSPECT PARK: Litchfield Villa",
         "contact": "TACF-NYC@acf.org",
@@ -520,8 +577,6 @@
         "area": "Litchfield Villa",
         "variant": "PBR",
         "seed": 70,
-        "health_detail": "11/25 cannot find. Gone",
-        "last_survey_date": "2024-11-25",
         "excel_match": "Litchfield Villa #8",
         "tree_number": 8,
         "growth_data": {
@@ -535,9 +590,24 @@
             "height": 6.6
           },
           "2024": {
-            "dbh": 8.0
+            "height": 8.0,
+            "dbh": 0.5
           }
         },
+        "health_history": {
+          "2025-11-25": {
+            "status": "dead",
+            "detail": "11/25 cannot find. Gone",
+            "source": "arcgis"
+          },
+          "2024-12-31": {
+            "status": "good",
+            "detail": "good",
+            "source": "excel"
+          }
+        },
+        "health_detail": "11/25 cannot find. Gone",
+        "last_survey_date": "2025-11-25",
         "borough": "Brooklyn"
       }
     },
@@ -554,8 +624,8 @@
         "tree_id": "NYC-AC-014",
         "organization": "TACF",
         "health_status": "healthy",
-        "planted_date": "1969-12-31",
-        "last_updated": "2024-11-25",
+        "planted_date": "2018-01-01",
+        "last_updated": "2025-11-25",
         "notes": "11/25 excellent ",
         "location_description": "PROSPECT PARK: Litchfield Villa",
         "contact": "TACF-NYC@acf.org",
@@ -571,8 +641,6 @@
         "area": "Litchfield Villa",
         "variant": "PBR",
         "seed": 40,
-        "health_detail": "11/25 excellent",
-        "last_survey_date": "2024-11-25",
         "excel_match": "Litchfield Villa #10",
         "tree_number": 10,
         "growth_data": {
@@ -587,9 +655,24 @@
             "dbh": 1.0
           },
           "2024": {
-            "dbh": 10.4
+            "height": 10.4,
+            "dbh": 1.0
           }
         },
+        "health_history": {
+          "2025-11-25": {
+            "status": "healthy",
+            "detail": "11/25 excellent",
+            "source": "arcgis"
+          },
+          "2024-12-31": {
+            "status": "healthy",
+            "detail": "excellent",
+            "source": "excel"
+          }
+        },
+        "health_detail": "11/25 excellent",
+        "last_survey_date": "2025-11-25",
         "borough": "Brooklyn"
       }
     },
@@ -606,8 +689,8 @@
         "tree_id": "NYC-AC-015",
         "organization": "TACF",
         "health_status": "healthy",
-        "planted_date": "1969-12-31",
-        "last_updated": "2024-11-25",
+        "planted_date": "2020-01-01",
+        "last_updated": "2025-11-25",
         "notes": "11/25 very good",
         "location_description": "PROSPECT PARK: Litchfield Villa",
         "contact": "TACF-NYC@acf.org",
@@ -623,8 +706,6 @@
         "area": "Litchfield Villa",
         "variant": "PBR",
         "seed": 12,
-        "health_detail": "11/25 very good",
-        "last_survey_date": "2024-11-25",
         "excel_match": "Litchfield Villa #13",
         "tree_number": 13,
         "growth_data": {
@@ -638,9 +719,23 @@
             "height": 1.3
           },
           "2024": {
-            "dbh": 2.3
+            "height": 2.3
           }
         },
+        "health_history": {
+          "2025-11-25": {
+            "status": "healthy",
+            "detail": "11/25 very good",
+            "source": "arcgis"
+          },
+          "2024-12-31": {
+            "status": "good",
+            "detail": "good",
+            "source": "excel"
+          }
+        },
+        "health_detail": "11/25 very good",
+        "last_survey_date": "2025-11-25",
         "borough": "Brooklyn"
       }
     },
@@ -656,9 +751,9 @@
       "properties": {
         "tree_id": "NYC-AC-016",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "fair",
+        "planted_date": "2020-01-01",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Litchfield Villa",
         "contact": "PPAarcgis",
@@ -687,9 +782,18 @@
             "height": 3.0
           },
           "2024": {
-            "dbh": 3.2
+            "height": 3.2
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "fair",
+            "detail": "ok",
+            "source": "excel"
+          }
+        },
+        "health_detail": "ok",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -705,9 +809,9 @@
       "properties": {
         "tree_id": "NYC-AC-017",
         "organization": "DG1",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "dead",
+        "planted_date": "2021-01-01",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Litchfield Villa",
         "contact": "PPAarcgis",
@@ -735,9 +839,18 @@
             "height": 1.2
           },
           "2024": {
-            "dbh": 0.8
+            "height": 0.8
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "dead",
+            "detail": "may be dead",
+            "source": "excel"
+          }
+        },
+        "health_detail": "may be dead",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -754,8 +867,8 @@
         "tree_id": "NYC-AC-018",
         "organization": "TACF",
         "health_status": "healthy",
-        "planted_date": "1969-12-31",
-        "last_updated": "2024-11-25",
+        "planted_date": "2021-01-01",
+        "last_updated": "2025-11-25",
         "notes": "11/25 very good",
         "location_description": "PROSPECT PARK: Litchfield Villa",
         "contact": "TACF-NYC@acf.org",
@@ -771,15 +884,27 @@
         "area": "Litchfield Villa",
         "variant": "Native",
         "seed": 25,
-        "health_detail": "11/25 very good",
-        "last_survey_date": "2024-11-25",
         "excel_match": "Litchfield Villa #17",
         "tree_number": 17,
         "growth_data": {
           "2024": {
-            "dbh": 1.2
+            "height": 1.2
           }
         },
+        "health_history": {
+          "2025-11-25": {
+            "status": "healthy",
+            "detail": "11/25 very good",
+            "source": "arcgis"
+          },
+          "2024-12-31": {
+            "status": "fair",
+            "detail": "ok",
+            "source": "excel"
+          }
+        },
+        "health_detail": "11/25 very good",
+        "last_survey_date": "2025-11-25",
         "borough": "Brooklyn"
       }
     },
@@ -795,9 +920,9 @@
       "properties": {
         "tree_id": "NYC-AC-019",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "good",
+        "planted_date": "2020-01-01",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Litchfield Villa",
         "contact": "PPAarcgis",
@@ -817,9 +942,18 @@
         "tree_number": 23,
         "growth_data": {
           "2024": {
-            "dbh": 2.0
+            "height": 2.0
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "good",
+            "detail": "good",
+            "source": "excel"
+          }
+        },
+        "health_detail": "good",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -836,8 +970,8 @@
         "tree_id": "NYC-AC-020",
         "organization": "TACF",
         "health_status": "dead",
-        "planted_date": "1969-12-31",
-        "last_updated": "2024-11-25",
+        "planted_date": "2023-01-01",
+        "last_updated": "2025-11-25",
         "notes": "11/25 dead twig",
         "location_description": "PROSPECT PARK: Litchfield Villa",
         "contact": "TACF-NYC@acf.org",
@@ -853,15 +987,27 @@
         "area": "Litchfield Villa",
         "variant": "PBR",
         "seed": 89,
-        "health_detail": "11/25 dead twig",
-        "last_survey_date": "2024-11-25",
         "excel_match": "Litchfield Villa #25",
         "tree_number": 25,
         "growth_data": {
           "2024": {
-            "dbh": 0.5
+            "height": 0.5
           }
         },
+        "health_history": {
+          "2025-11-25": {
+            "status": "dead",
+            "detail": "11/25 dead twig",
+            "source": "arcgis"
+          },
+          "2024-12-31": {
+            "status": "fair",
+            "detail": "ok",
+            "source": "excel"
+          }
+        },
+        "health_detail": "11/25 dead twig",
+        "last_survey_date": "2025-11-25",
         "borough": "Brooklyn"
       }
     },
@@ -878,8 +1024,8 @@
         "tree_id": "NYC-AC-021",
         "organization": "GW",
         "health_status": "healthy",
-        "planted_date": "1969-12-31",
-        "last_updated": "2024-11-25",
+        "planted_date": "2023-01-01",
+        "last_updated": "2025-11-25",
         "notes": "11/25 very good",
         "location_description": "PROSPECT PARK: Litchfield Villa",
         "contact": "TACF-NYC@acf.org",
@@ -895,15 +1041,27 @@
         "area": "Litchfield Villa",
         "variant": "Native",
         "seed": 48,
-        "health_detail": "11/25 very good",
-        "last_survey_date": "2024-11-25",
         "excel_match": "Litchfield Villa #26",
         "tree_number": 26,
         "growth_data": {
           "2024": {
-            "dbh": 1.1
+            "height": 1.1
           }
         },
+        "health_history": {
+          "2025-11-25": {
+            "status": "healthy",
+            "detail": "11/25 very good",
+            "source": "arcgis"
+          },
+          "2024-12-31": {
+            "status": "good",
+            "detail": "good",
+            "source": "excel"
+          }
+        },
+        "health_detail": "11/25 very good",
+        "last_survey_date": "2025-11-25",
         "borough": "Brooklyn"
       }
     },
@@ -919,9 +1077,9 @@
       "properties": {
         "tree_id": "NYC-AC-022",
         "organization": "GW",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "dead",
+        "planted_date": "2023-01-01",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Litchfield Villa",
         "contact": "PPAarcgis",
@@ -941,9 +1099,18 @@
         "tree_number": 28,
         "growth_data": {
           "2024": {
-            "dbh": 1.1
+            "height": 1.1
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "dead",
+            "detail": "looks dead",
+            "source": "excel"
+          }
+        },
+        "health_detail": "looks dead",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -959,9 +1126,9 @@
       "properties": {
         "tree_id": "NYC-AC-023",
         "organization": "GW",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "fair",
+        "planted_date": "2023-01-01",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Litchfield Villa",
         "contact": "PPAarcgis",
@@ -981,9 +1148,18 @@
         "tree_number": 27,
         "growth_data": {
           "2024": {
-            "dbh": 1.3
+            "height": 1.3
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "fair",
+            "detail": "maybe ok",
+            "source": "excel"
+          }
+        },
+        "health_detail": "maybe ok",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -999,9 +1175,9 @@
       "properties": {
         "tree_id": "NYC-AC-024",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "healthy",
+        "planted_date": "2014-01-01",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Sugar Bowl",
         "contact": "PPAarcgis",
@@ -1032,9 +1208,19 @@
             "dbh": 1.0
           },
           "2024": {
-            "dbh": 14.7
+            "height": 14.7,
+            "dbh": 1.0
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "healthy",
+            "detail": "excellent",
+            "source": "excel"
+          }
+        },
+        "health_detail": "excellent",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -1050,9 +1236,9 @@
       "properties": {
         "tree_id": "NYC-AC-025",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "healthy",
+        "planted_date": "2017-01-01",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Sugar Bowl",
         "contact": "PPAarcgis",
@@ -1082,9 +1268,19 @@
             "dbh": 1.0
           },
           "2024": {
-            "dbh": 12.7
+            "height": 12.7,
+            "dbh": 1.0
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "healthy",
+            "detail": "excellent",
+            "source": "excel"
+          }
+        },
+        "health_detail": "excellent",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -1100,9 +1296,9 @@
       "properties": {
         "tree_id": "NYC-AC-026",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "declining",
+        "planted_date": "2018-01-01",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Sugar Bowl",
         "contact": "PPAarcgis",
@@ -1131,9 +1327,18 @@
             "height": 2.1
           },
           "2024": {
-            "dbh": 2.3
+            "height": 2.3
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "declining",
+            "detail": "2nd stem, blight",
+            "source": "excel"
+          }
+        },
+        "health_detail": "2nd stem, blight",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -1149,9 +1354,9 @@
       "properties": {
         "tree_id": "NYC-AC-027",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "good",
+        "planted_date": "2023-01-01",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Sugar Bowl",
         "contact": "PPAarcgis",
@@ -1180,9 +1385,18 @@
             "height": 1.7
           },
           "2024": {
-            "dbh": 1.8
+            "height": 1.8
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "good",
+            "detail": "good",
+            "source": "excel"
+          }
+        },
+        "health_detail": "good",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -1198,9 +1412,9 @@
       "properties": {
         "tree_id": "NYC-AC-028",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "healthy",
+        "planted_date": "2020-01-01",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Sugar Bowl",
         "contact": "PPAarcgis",
@@ -1229,9 +1443,18 @@
             "height": 3.3
           },
           "2024": {
-            "dbh": 3.7
+            "height": 3.7
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "healthy",
+            "detail": "very good",
+            "source": "excel"
+          }
+        },
+        "health_detail": "very good",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -1247,9 +1470,9 @@
       "properties": {
         "tree_id": "NYC-AC-029",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-25",
+        "health_status": "good",
+        "planted_date": "2021-01-01",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Sugar Bowl",
         "contact": "TACF-NYC@acf.org",
@@ -1272,9 +1495,18 @@
             "height": 1.3
           },
           "2024": {
-            "dbh": 1.3
+            "height": 1.3
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "good",
+            "detail": "good",
+            "source": "excel"
+          }
+        },
+        "health_detail": "good",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -1290,9 +1522,9 @@
       "properties": {
         "tree_id": "NYC-AC-030",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "healthy",
+        "planted_date": "2020-01-01",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Sugar Bowl",
         "contact": "PPAarcgis",
@@ -1312,9 +1544,18 @@
         "tree_number": 22,
         "growth_data": {
           "2024": {
-            "dbh": 3.7
+            "height": 3.7
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "healthy",
+            "detail": "very good",
+            "source": "excel"
+          }
+        },
+        "health_detail": "very good",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -1330,9 +1571,9 @@
       "properties": {
         "tree_id": "NYC-AC-031",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "fair",
+        "planted_date": "2023-01-01",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Sugar Bowl",
         "contact": "PPAarcgis",
@@ -1352,9 +1593,18 @@
         "tree_number": 23,
         "growth_data": {
           "2024": {
-            "dbh": 1.0
+            "height": 1.0
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "fair",
+            "detail": "fair",
+            "source": "excel"
+          }
+        },
+        "health_detail": "fair",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -1371,7 +1621,7 @@
         "tree_id": "NYC-AC-032",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-11-11",
         "notes": "",
         "location_description": "Sugar Bowl",
@@ -1403,9 +1653,9 @@
       "properties": {
         "tree_id": "NYC-AC-033",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "healthy",
+        "planted_date": "Unknown",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Bartel-Pritchard",
         "contact": "PPAarcgis",
@@ -1435,9 +1685,19 @@
             "dbh": 2.7
           },
           "2024": {
-            "dbh": 27.1
+            "height": 27.1,
+            "dbh": 3.2
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "healthy",
+            "detail": "excellent",
+            "source": "excel"
+          }
+        },
+        "health_detail": "excellent",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -1454,7 +1714,7 @@
         "tree_id": "NYC-AC-034",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "Unknown",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Bartell Pritchard",
@@ -1486,7 +1746,7 @@
         "tree_id": "NYC-AC-035",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "Unknown",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Bartell Pritchard",
@@ -1518,7 +1778,7 @@
         "tree_id": "NYC-AC-036",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "Unknown",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Bartell Pritchard",
@@ -1549,9 +1809,9 @@
       "properties": {
         "tree_id": "NYC-AC-037",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "healthy",
+        "planted_date": "Unknown",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Bartel-Pritchard",
         "contact": "PPAarcgis",
@@ -1579,9 +1839,18 @@
             "height": 6.5
           },
           "2024": {
-            "dbh": 5.8
+            "height": 5.8
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "healthy",
+            "detail": "very good",
+            "source": "excel"
+          }
+        },
+        "health_detail": "very good",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -1597,9 +1866,9 @@
       "properties": {
         "tree_id": "NYC-AC-038",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "healthy",
+        "planted_date": "Unknown",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Bartel-Pritchard",
         "contact": "PPAarcgis",
@@ -1618,9 +1887,19 @@
         "tree_number": 10,
         "growth_data": {
           "2024": {
-            "dbh": 21.0
+            "height": 21.0,
+            "dbh": 2.25
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "healthy",
+            "detail": "excellent",
+            "source": "excel"
+          }
+        },
+        "health_detail": "excellent",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -1636,9 +1915,9 @@
       "properties": {
         "tree_id": "NYC-AC-039",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "healthy",
+        "planted_date": "Unknown",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Bartel-Pritchard",
         "contact": "PPAarcgis",
@@ -1666,9 +1945,19 @@
             "height": 9.0
           },
           "2024": {
-            "dbh": 9.0
+            "height": 9.0,
+            "dbh": 0.75
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "healthy",
+            "detail": "very good",
+            "source": "excel"
+          }
+        },
+        "health_detail": "very good",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -1684,9 +1973,9 @@
       "properties": {
         "tree_id": "NYC-AC-040",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "fair",
+        "planted_date": "Unknown",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Bartel-Pritchard",
         "contact": "PPAarcgis",
@@ -1714,9 +2003,18 @@
             "height": 7.4
           },
           "2024": {
-            "dbh": 6.9
+            "height": 6.9
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "fair",
+            "detail": "fair",
+            "source": "excel"
+          }
+        },
+        "health_detail": "fair",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -1732,9 +2030,9 @@
       "properties": {
         "tree_id": "NYC-AC-041",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "healthy",
+        "planted_date": "Unknown",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Bartel-Pritchard",
         "contact": "PPAarcgis",
@@ -1764,9 +2062,19 @@
             "dbh": 1.4
           },
           "2024": {
-            "dbh": 22.4
+            "height": 22.4,
+            "dbh": 2.0
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "healthy",
+            "detail": "excellent",
+            "source": "excel"
+          }
+        },
+        "health_detail": "excellent",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -1782,9 +2090,9 @@
       "properties": {
         "tree_id": "NYC-AC-042",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-11-13",
+        "health_status": "healthy",
+        "planted_date": "Unknown",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Bartel-Pritchard",
         "contact": "TACF-NYC@acf.org",
@@ -1812,9 +2120,19 @@
             "height": 10.0
           },
           "2024": {
-            "dbh": 14.0
+            "height": 14.0,
+            "dbh": 1.0
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "healthy",
+            "detail": "excellent",
+            "source": "excel"
+          }
+        },
+        "health_detail": "excellent",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -1830,9 +2148,9 @@
       "properties": {
         "tree_id": "NYC-AC-043",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "healthy",
+        "planted_date": "Unknown",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Bartel-Pritchard",
         "contact": "PPAarcgis",
@@ -1860,9 +2178,19 @@
             "height": 9.0
           },
           "2024": {
-            "dbh": 13.0
+            "height": 13.0,
+            "dbh": 0.75
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "healthy",
+            "detail": "very good",
+            "source": "excel"
+          }
+        },
+        "health_detail": "very good",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -1878,9 +2206,9 @@
       "properties": {
         "tree_id": "NYC-AC-044",
         "organization": "Sugar Bowl",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-11-12",
+        "health_status": "healthy",
+        "planted_date": "2019-01-01",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Bartel-Pritchard",
         "contact": "TACF-NYC@acf.org",
@@ -1903,9 +2231,18 @@
             "height": 4.4
           },
           "2024": {
-            "dbh": 6.0
+            "height": 6.0
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "healthy",
+            "detail": "very good",
+            "source": "excel"
+          }
+        },
+        "health_detail": "very good",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -1921,9 +2258,9 @@
       "properties": {
         "tree_id": "NYC-AC-045",
         "organization": "ACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-11-12",
+        "health_status": "healthy",
+        "planted_date": "2018-01-01",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Bartel-Pritchard",
         "contact": "TACF-NYC@acf.org",
@@ -1951,9 +2288,19 @@
             "height": 5.8
           },
           "2024": {
-            "dbh": 8.5
+            "height": 8.5,
+            "dbh": 0.5
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "healthy",
+            "detail": "very good, needs tag",
+            "source": "excel"
+          }
+        },
+        "health_detail": "very good, needs tag",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -1969,9 +2316,9 @@
       "properties": {
         "tree_id": "NYC-AC-046",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "healthy",
+        "planted_date": "Unknown",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Bartel-Pritchard",
         "contact": "PPAarcgis",
@@ -1999,9 +2346,18 @@
             "height": 3.3
           },
           "2024": {
-            "dbh": 5.5
+            "height": 5.5
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "healthy",
+            "detail": "very good",
+            "source": "excel"
+          }
+        },
+        "health_detail": "very good",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -2017,9 +2373,9 @@
       "properties": {
         "tree_id": "NYC-AC-047",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "healthy",
+        "planted_date": "Unknown",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Bartel-Pritchard",
         "contact": "PPAarcgis",
@@ -2048,9 +2404,19 @@
             "dbh": 1.0
           },
           "2024": {
-            "dbh": 16.5
+            "height": 16.5,
+            "dbh": 1.75
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "healthy",
+            "detail": "excellent",
+            "source": "excel"
+          }
+        },
+        "health_detail": "excellent",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -2067,7 +2433,7 @@
         "tree_id": "NYC-AC-048",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "Unknown",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Bartell Pritchard",
@@ -2098,9 +2464,9 @@
       "properties": {
         "tree_id": "NYC-AC-049",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "fair",
+        "planted_date": "Unknown",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Bartel-Pritchard",
         "contact": "PPAarcgis",
@@ -2119,9 +2485,18 @@
         "tree_number": 33,
         "growth_data": {
           "2024": {
-            "dbh": 1.0
+            "height": 1.0
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "fair",
+            "detail": "ok, check in Spring",
+            "source": "excel"
+          }
+        },
+        "health_detail": "ok, check in Spring",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -2137,9 +2512,9 @@
       "properties": {
         "tree_id": "NYC-AC-050",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "good",
+        "planted_date": "Unknown",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Bartel-Pritchard",
         "contact": "PPAarcgis",
@@ -2158,9 +2533,18 @@
         "tree_number": 34,
         "growth_data": {
           "2024": {
-            "dbh": 1.0
+            "height": 1.0
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "good",
+            "detail": "good",
+            "source": "excel"
+          }
+        },
+        "health_detail": "good",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -2177,8 +2561,8 @@
         "tree_id": "NYC-AC-051",
         "organization": "ACF",
         "health_status": "good",
-        "planted_date": "1969-12-31",
-        "last_updated": "2024-11-25",
+        "planted_date": "2025-01-01",
+        "last_updated": "2025-11-25",
         "notes": "11/25 good",
         "location_description": "PROSPECT PARK: Litchfield Villa",
         "contact": "TACF-NYC@acf.org",
@@ -2194,15 +2578,27 @@
         "area": "Litchfield Villa",
         "variant": "PBR",
         "seed": 267,
-        "health_detail": "11/25 good",
-        "last_survey_date": "2024-11-25",
         "excel_match": "Litchfield Villa #28",
         "tree_number": 28,
         "growth_data": {
           "2024": {
-            "dbh": 1.1
+            "height": 1.1
           }
         },
+        "health_history": {
+          "2025-11-25": {
+            "status": "good",
+            "detail": "11/25 good",
+            "source": "arcgis"
+          },
+          "2024-12-31": {
+            "status": "dead",
+            "detail": "looks dead",
+            "source": "excel"
+          }
+        },
+        "health_detail": "11/25 good",
+        "last_survey_date": "2025-11-25",
         "borough": "Brooklyn"
       }
     },
@@ -2219,7 +2615,7 @@
         "tree_id": "NYC-AC-052",
         "organization": "272 ACF 3-2-2",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-10-27",
         "notes": "",
         "location_description": "Sugar Bowl",
@@ -2251,7 +2647,7 @@
         "tree_id": "NYC-AC-053",
         "organization": "GW",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2024-01-01",
         "last_updated": "2025-10-09",
         "notes": "",
         "location_description": "Fallkill",
@@ -2284,7 +2680,7 @@
         "tree_id": "NYC-AC-054",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "Unknown",
         "last_updated": "2025-09-29",
         "notes": "",
         "location_description": "Fallkill",
@@ -2316,7 +2712,7 @@
         "tree_id": "NYC-AC-055",
         "organization": "GW",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2024-01-01",
         "last_updated": "2025-10-09",
         "notes": "",
         "location_description": "Fallkill",
@@ -2349,7 +2745,7 @@
         "tree_id": "NYC-AC-056",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "Unknown",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Fallkill",
@@ -2380,9 +2776,9 @@
       "properties": {
         "tree_id": "NYC-AC-057",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "healthy",
+        "planted_date": "Unknown",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Sugar Bowl",
         "contact": "PPAarcgis",
@@ -2412,9 +2808,19 @@
             "dbh": 2.4
           },
           "2024": {
-            "dbh": 20.5
+            "height": 20.5,
+            "dbh": 2.9
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "healthy",
+            "detail": "excellent",
+            "source": "excel"
+          }
+        },
+        "health_detail": "excellent",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -2430,9 +2836,9 @@
       "properties": {
         "tree_id": "NYC-AC-058",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "declining",
+        "planted_date": "Unknown",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Sugar Bowl",
         "contact": "PPAarcgis",
@@ -2460,9 +2866,18 @@
             "height": 4.3
           },
           "2024": {
-            "dbh": 4.4
+            "height": 4.4
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "declining",
+            "detail": "blight, starting to coppice, Alexander",
+            "source": "excel"
+          }
+        },
+        "health_detail": "blight, starting to coppice, Alexander",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -2479,7 +2894,7 @@
         "tree_id": "NYC-AC-059",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "Unknown",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Midmeadow",
@@ -2511,7 +2926,7 @@
         "tree_id": "NYC-AC-060",
         "organization": "PBR",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2023-01-01",
         "last_updated": "2025-09-26",
         "notes": "",
         "location_description": "Midmeadow",
@@ -2544,7 +2959,7 @@
         "tree_id": "NYC-AC-061",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "Unknown",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Maintenance Yard",
@@ -2576,7 +2991,7 @@
         "tree_id": "NYC-AC-062",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "Unknown",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Maintenance Yard",
@@ -2607,9 +3022,9 @@
       "properties": {
         "tree_id": "NYC-AC-063",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "declining",
+        "planted_date": "Unknown",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Peninsula",
         "contact": "PPAarcgis",
@@ -2637,9 +3052,18 @@
             "height": 6.2
           },
           "2024": {
-            "dbh": 6.2
+            "height": 6.2
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "declining",
+            "detail": "significant blight",
+            "source": "excel"
+          }
+        },
+        "health_detail": "significant blight",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -2655,9 +3079,9 @@
       "properties": {
         "tree_id": "NYC-AC-064",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "declining",
+        "planted_date": "Unknown",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Sugar Bowl",
         "contact": "PPAarcgis",
@@ -2687,9 +3111,19 @@
             "dbh": 1.8
           },
           "2024": {
-            "dbh": 18.5
+            "height": 18.5,
+            "dbh": 2.2
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "declining",
+            "detail": "significant blight, Eleanor",
+            "source": "excel"
+          }
+        },
+        "health_detail": "significant blight, Eleanor",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -2706,7 +3140,7 @@
         "tree_id": "NYC-AC-065",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "Unknown",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Sugar Bowl",
@@ -2737,9 +3171,9 @@
       "properties": {
         "tree_id": "NYC-AC-066",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "healthy",
+        "planted_date": "Unknown",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Sugar Bowl",
         "contact": "PPAarcgis",
@@ -2767,9 +3201,18 @@
             "height": 4.8
           },
           "2024": {
-            "dbh": 6.3
+            "height": 6.3
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "healthy",
+            "detail": "very good",
+            "source": "excel"
+          }
+        },
+        "health_detail": "very good",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -2785,9 +3228,9 @@
       "properties": {
         "tree_id": "NYC-AC-067",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "good",
+        "planted_date": "Unknown",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Sugar Bowl",
         "contact": "PPAarcgis",
@@ -2806,9 +3249,18 @@
         "tree_number": 24,
         "growth_data": {
           "2024": {
-            "dbh": 1.3
+            "height": 1.3
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "good",
+            "detail": "good",
+            "source": "excel"
+          }
+        },
+        "health_detail": "good",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -2825,7 +3277,7 @@
         "tree_id": "NYC-AC-068",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "Unknown",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Sugar Bowl",
@@ -2856,9 +3308,9 @@
       "properties": {
         "tree_id": "NYC-AC-069",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "healthy",
+        "planted_date": "Unknown",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Sugar Bowl",
         "contact": "PPAarcgis",
@@ -2887,9 +3339,19 @@
             "dbh": 1.0
           },
           "2024": {
-            "dbh": 12.7
+            "height": 12.7,
+            "dbh": 1.0
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "healthy",
+            "detail": "excellent",
+            "source": "excel"
+          }
+        },
+        "health_detail": "excellent",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -2905,9 +3367,9 @@
       "properties": {
         "tree_id": "NYC-AC-070",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "healthy",
+        "planted_date": "Unknown",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Sugar Bowl",
         "contact": "PPAarcgis",
@@ -2935,9 +3397,18 @@
             "height": 3.3
           },
           "2024": {
-            "dbh": 3.7
+            "height": 3.7
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "healthy",
+            "detail": "very good",
+            "source": "excel"
+          }
+        },
+        "health_detail": "very good",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -2954,7 +3425,7 @@
         "tree_id": "NYC-AC-071",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "Unknown",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Sugar Bowl",
@@ -2985,9 +3456,9 @@
       "properties": {
         "tree_id": "NYC-AC-073",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "healthy",
+        "planted_date": "Unknown",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Sugar Bowl",
         "contact": "PPAarcgis",
@@ -3006,9 +3477,18 @@
         "tree_number": 22,
         "growth_data": {
           "2024": {
-            "dbh": 3.7
+            "height": 3.7
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "healthy",
+            "detail": "very good",
+            "source": "excel"
+          }
+        },
+        "health_detail": "very good",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -3024,9 +3504,9 @@
       "properties": {
         "tree_id": "NYC-AC-074",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "declining",
+        "planted_date": "Unknown",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Sugar Bowl",
         "contact": "PPAarcgis",
@@ -3054,9 +3534,18 @@
             "height": 2.1
           },
           "2024": {
-            "dbh": 2.3
+            "height": 2.3
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "declining",
+            "detail": "2nd stem, blight",
+            "source": "excel"
+          }
+        },
+        "health_detail": "2nd stem, blight",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -3073,7 +3562,7 @@
         "tree_id": "NYC-AC-075",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "Unknown",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Vale of Cashmere",
@@ -3105,7 +3594,7 @@
         "tree_id": "NYC-AC-076",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "Unknown",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Vale of Cashmere",
@@ -3137,7 +3626,7 @@
         "tree_id": "NYC-AC-077",
         "organization": "Sugar Bowl",
         "health_status": "healthy",
-        "planted_date": "1969-12-31",
+        "planted_date": "2015-01-01",
         "last_updated": "2025-11-16",
         "notes": "11/16/25 2015/24/1 SB excellent ",
         "location_description": "PROSPECT PARK: West Drive",
@@ -3154,8 +3643,6 @@
         "area": "West Drive",
         "variant": "Native",
         "seed": 24,
-        "health_detail": "11/16/25 2015/24/1 SB excellent",
-        "last_survey_date": "2025-11-16",
         "excel_match": "West Drive #1",
         "tree_number": 1,
         "growth_data": {
@@ -3171,9 +3658,24 @@
             "dbh": 1.9
           },
           "2024": {
-            "dbh": 24.0
+            "height": 24.0,
+            "dbh": 2.25
           }
         },
+        "health_history": {
+          "2025-11-16": {
+            "status": "healthy",
+            "detail": "11/16/25 2015/24/1 SB excellent",
+            "source": "arcgis"
+          },
+          "2024-12-31": {
+            "status": "healthy",
+            "detail": "very good",
+            "source": "excel"
+          }
+        },
+        "health_detail": "11/16/25 2015/24/1 SB excellent",
+        "last_survey_date": "2025-11-16",
         "borough": "Brooklyn"
       }
     },
@@ -3190,7 +3692,7 @@
         "tree_id": "NYC-AC-078",
         "organization": "Sugar Bowl",
         "health_status": "healthy",
-        "planted_date": "1969-12-31",
+        "planted_date": "Unknown",
         "last_updated": "2025-11-16",
         "notes": "11/16/25 2015/10/2 SB,excellent ",
         "location_description": "PROSPECT PARK: West Drive",
@@ -3207,8 +3709,6 @@
         "area": "West Drive",
         "variant": "Native",
         "seed": 10,
-        "health_detail": "11/16/25 2015/10/2 SB,excellent",
-        "last_survey_date": "2025-11-16",
         "excel_match": "West Drive #2",
         "tree_number": 2,
         "growth_data": {
@@ -3224,9 +3724,24 @@
             "dbh": 3.3
           },
           "2024": {
-            "dbh": 31.4
+            "height": 31.4,
+            "dbh": 4.3
           }
         },
+        "health_history": {
+          "2025-11-16": {
+            "status": "healthy",
+            "detail": "11/16/25 2015/10/2 SB,excellent",
+            "source": "arcgis"
+          },
+          "2024-12-31": {
+            "status": "healthy",
+            "detail": "very good",
+            "source": "excel"
+          }
+        },
+        "health_detail": "11/16/25 2015/10/2 SB,excellent",
+        "last_survey_date": "2025-11-16",
         "borough": "Brooklyn"
       }
     },
@@ -3243,7 +3758,7 @@
         "tree_id": "NYC-AC-079",
         "organization": "ACF",
         "health_status": "healthy",
-        "planted_date": "1969-12-31",
+        "planted_date": "2017-01-01",
         "last_updated": "2025-11-16",
         "notes": "11/16/25 2017/62/4 ACF excellent ",
         "location_description": "PROSPECT PARK: West Drive",
@@ -3260,8 +3775,6 @@
         "area": "West Drive",
         "variant": "PBR",
         "seed": 62,
-        "health_detail": "11/16/25 2017/62/4 ACF excellent",
-        "last_survey_date": "2025-11-16",
         "excel_match": "West Drive #4",
         "tree_number": 4,
         "growth_data": {
@@ -3277,9 +3790,24 @@
             "dbh": 1.6
           },
           "2024": {
-            "dbh": 24.0
+            "height": 24.0,
+            "dbh": 2.0
           }
         },
+        "health_history": {
+          "2025-11-16": {
+            "status": "healthy",
+            "detail": "11/16/25 2017/62/4 ACF excellent",
+            "source": "arcgis"
+          },
+          "2024-12-31": {
+            "status": "healthy",
+            "detail": "very good",
+            "source": "excel"
+          }
+        },
+        "health_detail": "11/16/25 2017/62/4 ACF excellent",
+        "last_survey_date": "2025-11-16",
         "borough": "Brooklyn"
       }
     },
@@ -3296,7 +3824,7 @@
         "tree_id": "NYC-AC-080",
         "organization": "ACF",
         "health_status": "healthy",
-        "planted_date": "1969-12-31",
+        "planted_date": "Unknown",
         "last_updated": "2025-11-16",
         "notes": "11/16/25 2018/35/5 ACF 5.8\u2019, excellent ",
         "location_description": "PROSPECT PARK: West Drive",
@@ -3313,8 +3841,6 @@
         "area": "West Drive",
         "variant": "PBR",
         "seed": 35,
-        "health_detail": "11/16/25 2018/35/5 ACF 5.8\u2019, excellent",
-        "last_survey_date": "2025-11-16",
         "excel_match": "West Drive #5",
         "tree_number": 5,
         "growth_data": {
@@ -3328,9 +3854,23 @@
             "height": 3.5
           },
           "2024": {
-            "dbh": 4.0
+            "height": 4.0
           }
         },
+        "health_history": {
+          "2025-11-16": {
+            "status": "healthy",
+            "detail": "11/16/25 2018/35/5 ACF 5.8\u2019, excellent",
+            "source": "arcgis"
+          },
+          "2024-12-31": {
+            "status": "good",
+            "detail": "good",
+            "source": "excel"
+          }
+        },
+        "health_detail": "11/16/25 2018/35/5 ACF 5.8\u2019, excellent",
+        "last_survey_date": "2025-11-16",
         "borough": "Brooklyn"
       }
     },
@@ -3346,9 +3886,9 @@
       "properties": {
         "tree_id": "NYC-AC-081",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-10-02",
+        "health_status": "fair",
+        "planted_date": "Unknown",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: West Drive",
         "contact": "TACF-NYC@acf.org",
@@ -3376,9 +3916,18 @@
             "height": 2.2
           },
           "2024": {
-            "dbh": 3.2
+            "height": 3.2
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "fair",
+            "detail": "ok",
+            "source": "excel"
+          }
+        },
+        "health_detail": "ok",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -3395,7 +3944,7 @@
         "tree_id": "NYC-AC-082",
         "organization": "Unknown",
         "health_status": "declining",
-        "planted_date": "1969-12-31",
+        "planted_date": "Unknown",
         "last_updated": "2025-11-16",
         "notes": "11/16/25 Good, 8\u2019, possible blight",
         "location_description": "PROSPECT PARK: West Drive",
@@ -3411,8 +3960,6 @@
         "name": "WD 10",
         "area": "West Drive",
         "variant": " ",
-        "health_detail": "11/16/25 Good, 8\u2019, possible blight",
-        "last_survey_date": "2025-11-16",
         "excel_match": "West Drive #10",
         "tree_number": 10,
         "growth_data": {
@@ -3426,9 +3973,23 @@
             "height": 5.5
           },
           "2024": {
-            "dbh": 5.8
+            "height": 5.8
           }
         },
+        "health_history": {
+          "2025-11-16": {
+            "status": "declining",
+            "detail": "11/16/25 Good, 8\u2019, possible blight",
+            "source": "arcgis"
+          },
+          "2024-12-31": {
+            "status": "declining",
+            "detail": "significant blight",
+            "source": "excel"
+          }
+        },
+        "health_detail": "11/16/25 Good, 8\u2019, possible blight",
+        "last_survey_date": "2025-11-16",
         "borough": "Brooklyn"
       }
     },
@@ -3444,9 +4005,9 @@
       "properties": {
         "tree_id": "NYC-AC-083",
         "organization": "TACF",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-10",
+        "health_status": "fair",
+        "planted_date": "Unknown",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: West Drive",
         "contact": "PPAarcgis",
@@ -3465,9 +4026,18 @@
         "tree_number": 12,
         "growth_data": {
           "2024": {
-            "dbh": 1.7
+            "height": 1.7
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "fair",
+            "detail": "ok",
+            "source": "excel"
+          }
+        },
+        "health_detail": "ok",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -3484,7 +4054,7 @@
         "tree_id": "NYC-AC-084",
         "organization": "TACF",
         "health_status": "dead",
-        "planted_date": "1969-12-31",
+        "planted_date": "Unknown",
         "last_updated": "2025-11-16",
         "notes": "11/16/25 was 12?, gone",
         "location_description": "West Drive",
@@ -3500,6 +4070,13 @@
         "name": "WD 14",
         "area": "West Drive",
         "variant": " ",
+        "health_history": {
+          "2025-11-16": {
+            "status": "dead",
+            "detail": "11/16/25 was 12?, gone",
+            "source": "arcgis"
+          }
+        },
         "health_detail": "11/16/25 was 12?, gone",
         "last_survey_date": "2025-11-16",
         "borough": "Brooklyn"
@@ -3518,7 +4095,7 @@
         "tree_id": "NYC-AC-085",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Vale of Cashmere",
@@ -3551,7 +4128,7 @@
         "tree_id": "NYC-AC-086",
         "organization": "2024 135 GW mix",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-28",
         "notes": "",
         "location_description": "Breeze Hill",
@@ -3584,7 +4161,7 @@
         "tree_id": "NYC-AC-087",
         "organization": "2024 202 GW",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-28",
         "notes": "",
         "location_description": "Breeze Hill",
@@ -3617,7 +4194,7 @@
         "tree_id": "NYC-AC-088",
         "organization": "TACF ACF AR 3-2-2",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-28",
         "notes": "",
         "location_description": "Breeze Hill",
@@ -3650,7 +4227,7 @@
         "tree_id": "NYC-AC-089",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Bartell Pritchard",
@@ -3683,7 +4260,7 @@
         "tree_id": "NYC-AC-090",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Bartell Pritchard",
@@ -3716,7 +4293,7 @@
         "tree_id": "NYC-AC-091",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Bartell Pritchard",
@@ -3749,7 +4326,7 @@
         "tree_id": "NYC-AC-092",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Bartell Pritchard",
@@ -3782,7 +4359,7 @@
         "tree_id": "NYC-AC-093",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Fallkill",
@@ -3815,7 +4392,7 @@
         "tree_id": "NYC-AC-094",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-10-07",
         "notes": "",
         "location_description": "Fallkill",
@@ -3848,7 +4425,7 @@
         "tree_id": "NYC-AC-095",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-10-07",
         "notes": "",
         "location_description": "Fallkill",
@@ -3881,7 +4458,7 @@
         "tree_id": "NYC-AC-096",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Fallkill",
@@ -3914,7 +4491,7 @@
         "tree_id": "NYC-AC-097",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Fallkill",
@@ -3947,7 +4524,7 @@
         "tree_id": "NYC-AC-098",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Fallkill",
@@ -3980,7 +4557,7 @@
         "tree_id": "NYC-AC-099",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Fallkill",
@@ -4013,7 +4590,7 @@
         "tree_id": "NYC-AC-100",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Fallkill",
@@ -4046,7 +4623,7 @@
         "tree_id": "NYC-AC-101",
         "organization": "GW",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Flatbush Ave",
@@ -4079,7 +4656,7 @@
         "tree_id": "NYC-AC-102",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Flatbush Ave",
@@ -4112,7 +4689,7 @@
         "tree_id": "NYC-AC-103",
         "organization": "GW",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Flatbush Ave",
@@ -4145,7 +4722,7 @@
         "tree_id": "NYC-AC-104",
         "organization": "GW",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-10-23",
         "notes": "",
         "location_description": "Flatbush Ave",
@@ -4178,7 +4755,7 @@
         "tree_id": "NYC-AC-105",
         "organization": "GW",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2024-01-01",
         "last_updated": "2025-10-02",
         "notes": "",
         "location_description": "Flatbush Ave",
@@ -4211,7 +4788,7 @@
         "tree_id": "NYC-AC-106",
         "organization": "GW",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-11-02",
         "notes": "",
         "location_description": "Lookout Hill",
@@ -4244,7 +4821,7 @@
         "tree_id": "NYC-AC-107",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-11-02",
         "notes": "",
         "location_description": "Lookout Hill",
@@ -4277,7 +4854,7 @@
         "tree_id": "NYC-AC-108",
         "organization": "GW",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-11-02",
         "notes": "",
         "location_description": "Lookout Hill",
@@ -4310,7 +4887,7 @@
         "tree_id": "NYC-AC-109",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-11-02",
         "notes": "",
         "location_description": "Lookout Hill",
@@ -4343,7 +4920,7 @@
         "tree_id": "NYC-AC-110",
         "organization": "GW",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-11-02",
         "notes": "",
         "location_description": "Lookout Hill",
@@ -4376,7 +4953,7 @@
         "tree_id": "NYC-AC-111",
         "organization": "GW",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-11-02",
         "notes": "",
         "location_description": "Lookout Hill",
@@ -4409,8 +4986,8 @@
         "tree_id": "NYC-AC-112",
         "organization": "GW",
         "health_status": "healthy",
-        "planted_date": "1969-12-31",
-        "last_updated": "2024-11-25",
+        "planted_date": "2025-01-01",
+        "last_updated": "2025-11-25",
         "notes": "11/25 very good",
         "location_description": "Litchfield Villa",
         "contact": "TACF-NYC@acf.org",
@@ -4426,8 +5003,15 @@
         "area": "Litchfield Villa",
         "variant": " ",
         "seed": 225,
+        "health_history": {
+          "2025-11-25": {
+            "status": "healthy",
+            "detail": "11/25 very good",
+            "source": "arcgis"
+          }
+        },
         "health_detail": "11/25 very good",
-        "last_survey_date": "2024-11-25",
+        "last_survey_date": "2025-11-25",
         "borough": "Brooklyn"
       }
     },
@@ -4444,8 +5028,8 @@
         "tree_id": "NYC-AC-113",
         "organization": "GW",
         "health_status": "healthy",
-        "planted_date": "1969-12-31",
-        "last_updated": "2024-11-25",
+        "planted_date": "2025-01-01",
+        "last_updated": "2025-11-25",
         "notes": "11/25 very good",
         "location_description": "Litchfield Villa",
         "contact": "TACF-NYC@acf.org",
@@ -4461,8 +5045,15 @@
         "area": "Litchfield Villa",
         "variant": " ",
         "seed": 165,
+        "health_history": {
+          "2025-11-25": {
+            "status": "healthy",
+            "detail": "11/25 very good",
+            "source": "arcgis"
+          }
+        },
         "health_detail": "11/25 very good",
-        "last_survey_date": "2024-11-25",
+        "last_survey_date": "2025-11-25",
         "borough": "Brooklyn"
       }
     },
@@ -4479,8 +5070,8 @@
         "tree_id": "NYC-AC-114",
         "organization": "TACF",
         "health_status": "good",
-        "planted_date": "1969-12-31",
-        "last_updated": "2024-11-25",
+        "planted_date": "2025-01-01",
+        "last_updated": "2025-11-25",
         "notes": "11/25 good",
         "location_description": "Litchfield Villa",
         "contact": "TACF-NYC@acf.org",
@@ -4496,8 +5087,15 @@
         "area": "Litchfield Villa",
         "variant": " ",
         "seed": 258,
+        "health_history": {
+          "2025-11-25": {
+            "status": "good",
+            "detail": "11/25 good",
+            "source": "arcgis"
+          }
+        },
         "health_detail": "11/25 good",
-        "last_survey_date": "2024-11-25",
+        "last_survey_date": "2025-11-25",
         "borough": "Brooklyn"
       }
     },
@@ -4514,7 +5112,7 @@
         "tree_id": "NYC-AC-115",
         "organization": "GW",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-11-14",
         "notes": "",
         "location_description": "Midmeadow",
@@ -4547,7 +5145,7 @@
         "tree_id": "NYC-AC-116",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Midmeadow",
@@ -4580,7 +5178,7 @@
         "tree_id": "NYC-AC-117",
         "organization": "GW",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Midmeadow",
@@ -4613,7 +5211,7 @@
         "tree_id": "NYC-AC-118",
         "organization": "GW",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Midmeadow",
@@ -4646,7 +5244,7 @@
         "tree_id": "NYC-AC-119",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Midmeadow",
@@ -4679,7 +5277,7 @@
         "tree_id": "NYC-AC-120",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Midmeadow",
@@ -4712,7 +5310,7 @@
         "tree_id": "NYC-AC-121",
         "organization": "GW",
         "health_status": "dead",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-11-14",
         "notes": "Gone",
         "location_description": "Midmeadow",
@@ -4729,7 +5327,15 @@
         "area": "Midmeadow",
         "variant": " ",
         "seed": 127,
+        "health_history": {
+          "2025-11-14": {
+            "status": "dead",
+            "detail": "Gone",
+            "source": "arcgis"
+          }
+        },
         "health_detail": "Gone",
+        "last_survey_date": "2025-11-14",
         "borough": "Brooklyn"
       }
     },
@@ -4746,7 +5352,7 @@
         "tree_id": "NYC-AC-122",
         "organization": "GW",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-11-07",
         "notes": "",
         "location_description": "Midmeadow",
@@ -4779,7 +5385,7 @@
         "tree_id": "NYC-AC-123",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-23",
         "notes": "",
         "location_description": "Midmeadow",
@@ -4812,7 +5418,7 @@
         "tree_id": "NYC-AC-124",
         "organization": "GW",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-11-14",
         "notes": "",
         "location_description": "Midmeadow",
@@ -4845,7 +5451,7 @@
         "tree_id": "NYC-AC-125",
         "organization": "GW",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Maintenance Yard",
@@ -4878,7 +5484,7 @@
         "tree_id": "NYC-AC-126",
         "organization": "GW",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Maintenance Yard",
@@ -4911,7 +5517,7 @@
         "tree_id": "NYC-AC-127",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Sugar Bowl",
@@ -4944,7 +5550,7 @@
         "tree_id": "NYC-AC-128",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Sugar Bowl",
@@ -4977,7 +5583,7 @@
         "tree_id": "NYC-AC-129",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Sugar Bowl",
@@ -5010,7 +5616,7 @@
         "tree_id": "NYC-AC-130",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Sugar Bowl",
@@ -5043,7 +5649,7 @@
         "tree_id": "NYC-AC-131",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Sugar Bowl",
@@ -5076,7 +5682,7 @@
         "tree_id": "NYC-AC-132",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Sugar Bowl",
@@ -5109,7 +5715,7 @@
         "tree_id": "NYC-AC-133",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Vale of Cashmere",
@@ -5142,7 +5748,7 @@
         "tree_id": "NYC-AC-134",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-09-10",
         "notes": "",
         "location_description": "Vale of Cashmere",
@@ -5174,7 +5780,7 @@
         "tree_id": "NYC-AC-135",
         "organization": "GW",
         "health_status": "dead",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-11-26",
         "notes": "11/26/25 gone",
         "location_description": "West Drive",
@@ -5191,6 +5797,13 @@
         "area": "West Drive",
         "variant": "NxPBR",
         "seed": 152,
+        "health_history": {
+          "2025-11-26": {
+            "status": "dead",
+            "detail": "11/26/25 gone",
+            "source": "arcgis"
+          }
+        },
         "health_detail": "11/26/25 gone",
         "last_survey_date": "2025-11-26",
         "borough": "Brooklyn"
@@ -5209,7 +5822,7 @@
         "tree_id": "NYC-AC-136",
         "organization": "GE",
         "health_status": "dead",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-11-16",
         "notes": "11/16/25 probably dead ",
         "location_description": "West Drive",
@@ -5226,6 +5839,13 @@
         "area": "West Drive",
         "variant": "NxPBR",
         "seed": 192,
+        "health_history": {
+          "2025-11-16": {
+            "status": "dead",
+            "detail": "11/16/25 probably dead",
+            "source": "arcgis"
+          }
+        },
         "health_detail": "11/16/25 probably dead",
         "last_survey_date": "2025-11-16",
         "borough": "Brooklyn"
@@ -5244,7 +5864,7 @@
         "tree_id": "NYC-AC-137",
         "organization": "TACF",
         "health_status": "dead",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-11-16",
         "notes": "11/16/25 cannot find",
         "location_description": "West Drive",
@@ -5261,6 +5881,13 @@
         "area": "West Drive",
         "variant": "PBR",
         "seed": 250,
+        "health_history": {
+          "2025-11-16": {
+            "status": "dead",
+            "detail": "11/16/25 cannot find",
+            "source": "arcgis"
+          }
+        },
         "health_detail": "11/16/25 cannot find",
         "last_survey_date": "2025-11-16",
         "borough": "Brooklyn"
@@ -5279,7 +5906,7 @@
         "tree_id": "NYC-AC-138",
         "organization": "TACF",
         "health_status": "healthy",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-11-16",
         "notes": "11/16/25 very good",
         "location_description": "West Drive",
@@ -5296,6 +5923,13 @@
         "area": "West Drive",
         "variant": "PBR",
         "seed": 276,
+        "health_history": {
+          "2025-11-16": {
+            "status": "healthy",
+            "detail": "11/16/25 very good",
+            "source": "arcgis"
+          }
+        },
         "health_detail": "11/16/25 very good",
         "last_survey_date": "2025-11-16",
         "borough": "Brooklyn"
@@ -5314,7 +5948,7 @@
         "tree_id": "NYC-AC-139",
         "organization": "GW",
         "health_status": "dead",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-11-16",
         "notes": "11/16/25 probably dead",
         "location_description": "West Drive",
@@ -5331,6 +5965,13 @@
         "area": "West Drive",
         "variant": "NxPBR",
         "seed": 162,
+        "health_history": {
+          "2025-11-16": {
+            "status": "dead",
+            "detail": "11/16/25 probably dead",
+            "source": "arcgis"
+          }
+        },
         "health_detail": "11/16/25 probably dead",
         "last_survey_date": "2025-11-16",
         "borough": "Brooklyn"
@@ -5349,7 +5990,7 @@
         "tree_id": "NYC-AC-140",
         "organization": "ACF",
         "health_status": "declining",
-        "planted_date": "1969-12-31",
+        "planted_date": "2012-01-01",
         "last_updated": "2025-10-11",
         "notes": "Mother tree currently used for collecting burs. Now showing some blight",
         "location_description": "GREENWOOD CEMETERY: Chestnut Hill",
@@ -5365,7 +6006,6 @@
         "name": "GW 4  PBR",
         "area": "Chestnut Hill Greenwood",
         "variant": "PBR",
-        "health_detail": "Mother tree currently used for collecting burs. Now showing some blight",
         "excel_match": "Chestnut Hill #4",
         "tree_number": 4,
         "growth_data": {
@@ -5381,9 +6021,24 @@
             "dbh": 8.6
           },
           "2024": {
-            "dbh": 24.7
+            "height": 24.7,
+            "dbh": 8.6
           }
         },
+        "health_history": {
+          "2025-10-11": {
+            "status": "declining",
+            "detail": "Mother tree currently used for collecting burs. Now showing some blight",
+            "source": "arcgis"
+          },
+          "2024-12-31": {
+            "status": "declining",
+            "detail": "Blight like lesions",
+            "source": "excel"
+          }
+        },
+        "health_detail": "Mother tree currently used for collecting burs. Now showing some blight",
+        "last_survey_date": "2025-10-11",
         "borough": "Brooklyn"
       }
     },
@@ -5400,7 +6055,7 @@
         "tree_id": "NYC-AC-141",
         "organization": "ACF",
         "health_status": "declining",
-        "planted_date": "1969-12-31",
+        "planted_date": "2017-01-01",
         "last_updated": "2025-09-27",
         "notes": "Healthy, no signs of blight.",
         "location_description": "Chestnut Hill Greenwood",
@@ -5416,7 +6071,15 @@
         "name": "8 PBR 2017 W6-31-33",
         "area": "Chestnut Hill Greenwood",
         "variant": "PBR",
+        "health_history": {
+          "2025-09-27": {
+            "status": "declining",
+            "detail": "Healthy, no signs of blight.",
+            "source": "arcgis"
+          }
+        },
         "health_detail": "Healthy, no signs of blight.",
+        "last_survey_date": "2025-09-27",
         "borough": "Brooklyn"
       }
     },
@@ -5433,7 +6096,7 @@
         "tree_id": "NYC-AC-142",
         "organization": "not sure, probably Prospect Park (Gumby)",
         "health_status": "declining",
-        "planted_date": "1969-12-31",
+        "planted_date": "2012-01-01",
         "last_updated": "2025-09-27",
         "notes": "Very significant blight.  Probably source of many of initial Greenwood seeds.",
         "location_description": "Chestnut Hill Greenwood",
@@ -5449,7 +6112,15 @@
         "name": "2 2012 native",
         "area": "Chestnut Hill Greenwood",
         "variant": "Native",
+        "health_history": {
+          "2025-09-27": {
+            "status": "declining",
+            "detail": "Very significant blight.  Probably source of many of initial Greenwood seeds.",
+            "source": "arcgis"
+          }
+        },
         "health_detail": "Very significant blight.  Probably source of many of initial Greenwood seeds.",
+        "last_survey_date": "2025-09-27",
         "borough": "Brooklyn"
       }
     },
@@ -5527,7 +6198,7 @@
         "tree_id": "NYC-AC-146",
         "organization": "154 2024 GW",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2024-01-01",
         "last_updated": "2025-09-30",
         "notes": "",
         "location_description": "Quaker Cemetery ",
@@ -5558,9 +6229,9 @@
       "properties": {
         "tree_id": "NYC-AC-147",
         "organization": "Native",
-        "health_status": "unknown",
-        "planted_date": "1969-12-31",
-        "last_updated": "2025-09-30",
+        "health_status": "healthy",
+        "planted_date": "2016-01-01",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Quaker Cemetery",
         "contact": "TACF-NYC@acf.org",
@@ -5589,9 +6260,19 @@
             "dbh": 2.9
           },
           "2024": {
-            "dbh": 41.25
+            "height": 41.25,
+            "dbh": 3.5
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "healthy",
+            "detail": "excellent",
+            "source": "excel"
+          }
+        },
+        "health_detail": "excellent",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -5666,7 +6347,7 @@
         "tree_id": "NYC-AC-150",
         "organization": "GW",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2024-01-01",
         "last_updated": "2025-10-27",
         "notes": "",
         "location_description": "",
@@ -5697,7 +6378,7 @@
         "tree_id": "NYC-AC-151",
         "organization": "GW",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-10-27",
         "notes": "",
         "location_description": "SB",
@@ -5728,11 +6409,11 @@
       "properties": {
         "tree_id": "NYC-AC-152",
         "organization": "TACF. 18/40/7/PBR",
-        "health_status": "unknown",
+        "health_status": "declining",
         "planted_date": "Unknown",
-        "last_updated": "2025-11-02",
+        "last_updated": "2024-12-31",
         "notes": "",
-        "location_description": "Lookout Hill",
+        "location_description": "PROSPECT PARK: Lookout Hill",
         "contact": "TACF-NYC@acf.org",
         "location_accuracy": {
           "level": "verified",
@@ -5744,6 +6425,31 @@
         },
         "name": "LOH #7",
         "area": "Lookout Hill",
+        "excel_match": "Lookout Hill #7",
+        "tree_number": 7,
+        "growth_data": {
+          "2021": {
+            "dbh": 4.5
+          },
+          "2022": {
+            "height": 4.5
+          },
+          "2023": {
+            "height": 5.2
+          },
+          "2024": {
+            "height": 6.6
+          }
+        },
+        "health_history": {
+          "2024-12-31": {
+            "status": "declining",
+            "detail": "good, may have blight",
+            "source": "excel"
+          }
+        },
+        "health_detail": "good, may have blight",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -5788,9 +6494,9 @@
       "properties": {
         "tree_id": "NYC-AC-154",
         "organization": "22/12/8/N",
-        "health_status": "unknown",
+        "health_status": "fair",
         "planted_date": "Unknown",
-        "last_updated": "2025-11-02",
+        "last_updated": "2024-12-31",
         "notes": "",
         "location_description": "PROSPECT PARK: Lookout Hill",
         "contact": "TACF-NYC@acf.org",
@@ -5810,9 +6516,18 @@
             "height": 0.9
           },
           "2024": {
-            "dbh": 1.0
+            "height": 1.0
           }
         },
+        "health_history": {
+          "2024-12-31": {
+            "status": "fair",
+            "detail": "ok",
+            "source": "excel"
+          }
+        },
+        "health_detail": "ok",
+        "last_survey_date": "2024-12-31",
         "borough": "Brooklyn"
       }
     },
@@ -5829,7 +6544,7 @@
         "tree_id": "NYC-AC-155",
         "organization": "Native ACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2004-01-01",
         "last_updated": "2025-11-04",
         "notes": "",
         "location_description": "Lookout Hill",
@@ -5860,7 +6575,7 @@
         "tree_id": "NYC-AC-156",
         "organization": "TACF",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-11-08",
         "notes": "Planted 11/8/2025 upper sugar bowl across from 158",
         "location_description": "Sugar Bowl",
@@ -5892,7 +6607,7 @@
         "tree_id": "NYC-AC-157",
         "organization": "TACF",
         "health_status": "dead",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2023-23-93",
         "notes": "Planted next to 2023/93/23/PBR dead. Planted 11/8/25.",
         "location_description": "Lower Sugar Bowl",
@@ -5908,6 +6623,13 @@
         "name": "SB 2024 #35 GW",
         "area": "Lower Sugar Bowl",
         "seed": 187,
+        "health_history": {
+          "2023-23-93": {
+            "status": "dead",
+            "detail": "Planted next to 2023/93/23/PBR dead. Planted 11/8/25.",
+            "source": "arcgis"
+          }
+        },
         "health_detail": "Planted next to 2023/93/23/PBR dead. Planted 11/8/25.",
         "last_survey_date": "2023-23-93",
         "borough": "Brooklyn"
@@ -5926,7 +6648,7 @@
         "tree_id": "NYC-AC-158",
         "organization": "GW 2024",
         "health_status": "dead",
-        "planted_date": "1969-12-31",
+        "planted_date": "2025-01-01",
         "last_updated": "2025-11-07",
         "notes": "Planted 11/7/25 in dead tree stump w/ Malcolm",
         "location_description": "Ball fields ",
@@ -5943,6 +6665,13 @@
         "area": "Ball fields ",
         "variant": "Native",
         "seed": 182,
+        "health_history": {
+          "2025-11-07": {
+            "status": "dead",
+            "detail": "Planted 11/7/25 in dead tree stump w/ Malcolm",
+            "source": "arcgis"
+          }
+        },
         "health_detail": "Planted 11/7/25 in dead tree stump w/ Malcolm",
         "last_survey_date": "2025-11-07",
         "borough": "Brooklyn"
@@ -5992,7 +6721,7 @@
         "tree_id": "NYC-AC-160",
         "organization": "GW",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2024-01-01",
         "last_updated": "2025-11-14",
         "notes": "Planted with V as replacement 11/14/25",
         "location_description": "Mid meadow",
@@ -6024,7 +6753,7 @@
         "tree_id": "NYC-AC-161",
         "organization": "GW",
         "health_status": "unknown",
-        "planted_date": "1969-12-31",
+        "planted_date": "2024-01-01",
         "last_updated": "2025-11-14",
         "notes": "Planted with V as replacement 11/14/25",
         "location_description": "MID MEADOW",
@@ -6086,7 +6815,7 @@
         "tree_id": "NYC-AC-163",
         "organization": "ACF",
         "health_status": "healthy",
-        "planted_date": "1969-12-31",
+        "planted_date": "2023-01-01",
         "last_updated": "2025-11-19",
         "notes": "11/19/25 2023/86/12 PBR excellent 4.5\u2019",
         "location_description": "PROSPECT PARK: West Drive",
@@ -6103,15 +6832,27 @@
         "area": "West Drive",
         "variant": "PBR",
         "seed": 86,
-        "health_detail": "11/19/25 2023/86/12 PBR excellent 4.5\u2019",
-        "last_survey_date": "2025-11-19",
         "excel_match": "West Drive #12",
         "tree_number": 12,
         "growth_data": {
           "2024": {
-            "dbh": 1.7
+            "height": 1.7
           }
         },
+        "health_history": {
+          "2025-11-19": {
+            "status": "healthy",
+            "detail": "11/19/25 2023/86/12 PBR excellent 4.5\u2019",
+            "source": "arcgis"
+          },
+          "2024-12-31": {
+            "status": "fair",
+            "detail": "ok",
+            "source": "excel"
+          }
+        },
+        "health_detail": "11/19/25 2023/86/12 PBR excellent 4.5\u2019",
+        "last_survey_date": "2025-11-19",
         "borough": "Brooklyn"
       }
     }

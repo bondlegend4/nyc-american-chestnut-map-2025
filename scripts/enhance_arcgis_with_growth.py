@@ -30,6 +30,7 @@ def parse_health_from_notes(notes: Optional[str]) -> Dict[str, Any]:
 
     Examples:
         "11/25 very good" → {status: "healthy", date: "11/25", detail: "very good"}
+        "excellent" → {status: "healthy", date: None, detail: "excellent"}
         "11/25 some blight, coppising" → {status: "declining", date: "11/25", detail: "some blight, coppising"}
         "11/25 dead twig" → {status: "dead", date: "11/25", detail: "dead twig"}
 
@@ -37,6 +38,10 @@ def parse_health_from_notes(notes: Optional[str]) -> Dict[str, Any]:
         Dict with 'status', 'date', 'detail'
     """
     if not notes or notes.strip() == "":
+        return {'status': 'unknown', 'date': None, 'detail': None}
+
+    # Skip notes that are just planting info
+    if 'planted' in notes.lower() and 'replacement' in notes.lower():
         return {'status': 'unknown', 'date': None, 'detail': None}
 
     # Look for date patterns (MM/DD, MM/DD/YY)
@@ -47,7 +52,9 @@ def parse_health_from_notes(notes: Optional[str]) -> Dict[str, Any]:
     if date_str and '/' in date_str:
         parts = date_str.split('/')
         if len(parts) == 2:  # MM/DD
-            date_str = f"2024-{parts[0].zfill(2)}-{parts[1].zfill(2)}"
+            # Use 2024 as default year, or 2025 if month is 11-12
+            year = "2025" if int(parts[0]) >= 11 else "2024"
+            date_str = f"{year}-{parts[0].zfill(2)}-{parts[1].zfill(2)}"
         elif len(parts) == 3:  # MM/DD/YY or MM/DD/YYYY
             year = parts[2]
             if len(year) == 2:
@@ -57,19 +64,26 @@ def parse_health_from_notes(notes: Optional[str]) -> Dict[str, Any]:
     notes_lower = notes.lower()
 
     # Health status mapping (in priority order)
-    if any(keyword in notes_lower for keyword in ['dead', 'gone', 'cannot find']):
+    # Check for dead/gone first
+    if any(keyword in notes_lower for keyword in ['dead', 'gone', 'cannot find', 'may be dead', 'might be dead', 'looks dead']):
         health_status = 'dead'
-    elif any(keyword in notes_lower for keyword in ['blight', 'coppising', 'declining']):
+    # Check for declining/blight
+    elif any(keyword in notes_lower for keyword in ['blight', 'coppising', 'coppice', 'declining', 'significant blight', 'multi stem']):
         health_status = 'declining'
-    elif any(keyword in notes_lower for keyword in ['poor', 'bad']):
+    # Check for poor
+    elif any(keyword in notes_lower for keyword in ['poor', 'bad', 'critical']):
         health_status = 'poor'
-    elif any(keyword in notes_lower for keyword in ['excellent', 'very good']):
+    # Check for excellent/very good (healthy)
+    elif any(keyword in notes_lower for keyword in ['excellent', 'very good', 'thriving']):
         health_status = 'healthy'
-    elif 'good' in notes_lower:
+    # Check for good
+    elif 'good' in notes_lower and 'very good' not in notes_lower:
         health_status = 'good'
-    elif any(keyword in notes_lower for keyword in ['fair', 'ok', 'okay']):
+    # Check for fair/ok
+    elif any(keyword in notes_lower for keyword in ['fair', 'ok', 'okay', 'maybe ok']):
         health_status = 'fair'
     else:
+        # If we have notes but no health keyword, it's unknown
         health_status = 'unknown'
 
     return {
@@ -201,10 +215,10 @@ def parse_excel_growth_history(excel_path: str) -> Dict[str, Dict[str, Any]]:
                     if dbh_2023:
                         growth_history['2023']['dbh'] = dbh_2023
 
-            # 2024 data (columns L=11, M=12)
-            if len(row) > 12:
-                height_2024 = extract_number(row[11]) if row[11] else None
-                dbh_2024 = extract_number(row[12]) if row[12] else None
+            # 2024 data (columns M=12, N=13)
+            if len(row) > 13:
+                height_2024 = extract_number(row[12]) if row[12] else None
+                dbh_2024 = extract_number(row[13]) if row[13] else None
                 if height_2024 or dbh_2024:
                     growth_history['2024'] = {}
                     if height_2024:
@@ -212,23 +226,60 @@ def parse_excel_growth_history(excel_path: str) -> Dict[str, Dict[str, Any]]:
                     if dbh_2024:
                         growth_history['2024']['dbh'] = dbh_2024
 
+            # Extract 2024 health status from Excel (column Q=16)
+            excel_health_2024 = None
+            if len(row) > 16 and row[16]:
+                excel_health_2024 = str(row[16]).strip()
+
             # Store with tree key for matching
             tree_growth[tree_key] = {
                 'location': current_location or current_area,
                 'area': current_area,
                 'tree_number': tree_num,
                 'excel_name': f"{location_name} #{tree_num}",
-                'growth_data': growth_history if growth_history else None
+                'growth_data': growth_history if growth_history else None,
+                'excel_health_2024': excel_health_2024
             }
 
     print(f"  Found growth data for {len(tree_growth)} trees")
     return tree_growth
 
 
+def standardize_health_text(health_text: str) -> str:
+    """
+    Convert health descriptions to standardized categories.
+    Used for both ArcGIS Notes and Excel health columns.
+    """
+    if not health_text:
+        return 'unknown'
+
+    health_lower = health_text.lower()
+
+    # Health status mapping (same logic as parse_health_from_notes)
+    if any(keyword in health_lower for keyword in ['dead', 'gone', 'cannot find', 'may be dead', 'might be dead', 'looks dead']):
+        return 'dead'
+    elif any(keyword in health_lower for keyword in ['blight', 'coppising', 'coppice', 'declining', 'significant blight', 'multi stem']):
+        return 'declining'
+    elif any(keyword in health_lower for keyword in ['poor', 'bad', 'critical']):
+        return 'poor'
+    elif any(keyword in health_lower for keyword in ['excellent', 'very good', 'thriving']):
+        return 'healthy'
+    elif 'good' in health_lower and 'very good' not in health_lower:
+        return 'good'
+    elif any(keyword in health_lower for keyword in ['fair', 'ok', 'okay', 'maybe ok']):
+        return 'fair'
+    else:
+        return 'unknown'
+
+
 def extract_tree_key_from_name(name: str) -> Optional[str]:
     """
     Extract tree key from ArcGIS Name field for matching with Excel.
-    Examples: "LV 05" → "LV-05", "BBG 01" → "BBG-01", "BP 03" → "BP-03"
+    Examples:
+        "LV 05" → "LV-05"
+        "BBG 01" → "BBG-01"
+        "LOH #7" → "LOH-07"
+        "BP03" → "BP-03"
 
     Returns:
         Tree key in format "XX-NN" for matching, or None
@@ -238,9 +289,9 @@ def extract_tree_key_from_name(name: str) -> Optional[str]:
 
     name = str(name).strip()
 
-    # Try to extract abbreviation and number
-    # Pattern: "XX NN" or "XXX NN"
-    match = re.match(r'([A-Z]+)\s+(\d+)', name)
+    # Try to extract abbreviation and number (with optional # symbol)
+    # Pattern: "XX NN", "XXX NN", "XX #NN"
+    match = re.match(r'([A-Z]+)\s*#?\s*(\d+)', name)
     if match:
         abbrev, num = match.groups()
         return f"{abbrev}-{num.zfill(2)}"
@@ -285,23 +336,34 @@ def enhance_arcgis_with_growth(arcgis_path: str, excel_path: str, output_path: s
     for feature in arcgis_data['features']:
         props = feature['properties']
 
-        # STEP 1: Parse health from ArcGIS Notes (PRIMARY source)
+        # Initialize health_history for tracking changes over time
+        health_history = {}
+
+        # STEP 1: Parse health from ArcGIS Notes
         notes = props.get('notes', '')
         health_info = parse_health_from_notes(notes)
 
+        # Get ArcGIS EditDate to use as fallback date
+        arcgis_edit_date = props.get('last_updated')
+
         if health_info['status'] != 'unknown':
-            props['health_status'] = health_info['status']
-            props['health_detail'] = health_info['detail']
-            if health_info['date']:
-                props['last_survey_date'] = health_info['date']
-                props['last_updated'] = health_info['date']
+            # Use parsed date from notes, or fall back to EditDate
+            health_date = health_info['date'] if health_info['date'] else arcgis_edit_date
+
+            if health_date:
+                # Add to health history
+                health_history[health_date] = {
+                    'status': health_info['status'],
+                    'detail': health_info['detail'],
+                    'source': 'arcgis'
+                }
             health_parsed += 1
 
         # STEP 2: Extract tree key for matching with Excel (e.g., "LV-05")
         tree_key = extract_tree_key_from_name(props.get('name'))
 
         if tree_key:
-            # STEP 3: Add growth history from Excel if available
+            # STEP 3: Add growth history AND health from Excel if available
             if tree_key in excel_growth:
                 excel_tree = excel_growth[tree_key]
 
@@ -313,6 +375,17 @@ def enhance_arcgis_with_growth(arcgis_path: str, excel_path: str, output_path: s
                 if excel_tree['growth_data']:
                     props['growth_data'] = excel_tree['growth_data']
                     growth_added += 1
+
+                # Add Excel 2024 health to health_history
+                if excel_tree.get('excel_health_2024'):
+                    excel_health_status = standardize_health_text(excel_tree['excel_health_2024'])
+                    if excel_health_status != 'unknown':
+                        # Use 2024-12-31 as the Excel survey date (end of year survey)
+                        health_history['2024-12-31'] = {
+                            'status': excel_health_status,
+                            'detail': excel_tree['excel_health_2024'],
+                            'source': 'excel'
+                        }
 
                 # Enhance location description if Excel has more detail
                 if excel_tree['location'] and excel_tree['location'] != excel_tree['area']:
@@ -328,6 +401,19 @@ def enhance_arcgis_with_growth(arcgis_path: str, excel_path: str, output_path: s
         else:
             # Couldn't extract tree key from name
             unmatched_arcgis.append(f"{props.get('name')} (no key extracted)")
+
+        # STEP 4: Store health_history and determine current health status
+        if health_history:
+            props['health_history'] = health_history
+
+            # Use the most recent health status as current
+            most_recent_date = max(health_history.keys())
+            most_recent = health_history[most_recent_date]
+
+            props['health_status'] = most_recent['status']
+            props['health_detail'] = most_recent['detail']
+            props['last_survey_date'] = most_recent_date
+            props['last_updated'] = most_recent_date
 
         # STEP 4: Set organization from Origin field (already mapped by import script)
         # Keep as TACF or whatever was imported
