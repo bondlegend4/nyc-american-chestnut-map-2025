@@ -4,7 +4,7 @@
 
 1. **Open the map in your browser**:
    ```bash
-   cd /Users/jose_d_sandoval/Desktop/Send_to_Diana/Highway_folder/lpr-/nyc-american-chestnut-map-2025
+   nyc-american-chestnut-map-2025
    python3 -m http.server 8000
    ```
 
@@ -17,7 +17,7 @@
 ### Step 1: Push to GitHub
 
 ```bash
-cd /Users/jose_d_sandoval/Desktop/Send_to_Diana/Highway_folder/lpr-/nyc-american-chestnut-map-2025
+cd nyc-american-chestnut-map-2025
 
 # Initialize git (if not already done)
 git init
