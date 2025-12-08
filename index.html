@@ -32,7 +32,7 @@
             position: fixed;
             top: 10px;
             left: 10px;
-            z-index: 400;
+            z-index: 1000;
             background: white;
             padding: 15px 20px;
             border-radius: 8px;
@@ -189,7 +189,7 @@
         .legend {
             position: fixed;
             bottom: 20px;
-            right: 20px;
+            left: 10px;
             background: white;
             padding: 12px 15px;
             border-radius: 8px;
@@ -556,8 +556,15 @@
     </div>
 
     <script>
-        // Initialize map centered on NYC
-        const map = L.map('map').setView([40.7128, -74.0060], 11);
+        // Initialize map centered on NYC with zoom controls in bottom right
+        const map = L.map('map', {
+            zoomControl: false
+        }).setView([40.7128, -74.0060], 11);
+
+        // Add zoom control to bottom right
+        L.control.zoom({
+            position: 'bottomright'
+        }).addTo(map);
 
         // Add OpenStreetMap tiles
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -1099,16 +1106,43 @@
                     });
                 });
 
-                // Create layer control
-                const overlays = {
-                    '<strong>All Trees</strong>': allTreesLayer
+                // Custom control with label
+                L.Control.CustomLayers = L.Control.Layers.extend({
+                    options: {
+                        title: ''
+                    },
+                    onAdd: function(map) {
+                        const container = L.Control.Layers.prototype.onAdd.call(this, map);
+                        if (this.options.title) {
+                            const title = L.DomUtil.create('div', 'leaflet-control-layers-title', container);
+                            title.innerHTML = `<strong>${this.options.title}</strong>`;
+                            title.style.padding = '5px 10px';
+                            title.style.borderBottom = '1px solid #ddd';
+                            title.style.marginBottom = '5px';
+                            container.insertBefore(title, container.firstChild);
+                        }
+                        return container;
+                    }
+                });
+
+                // Create layer control - organizations
+                const orgOverlays = {
+                    'All Trees': allTreesLayer
                 };
 
-                // Add separator
-                overlays['<hr style="margin: 5px 0;">'] = L.layerGroup();
+                // Add consolidated organization layers
+                Object.keys(consolidatedOrgLayers).sort().forEach(org => {
+                    orgOverlays[org] = consolidatedOrgLayers[org];
+                });
 
-                // Add health status layers
-                overlays['<strong>By Health Status:</strong>'] = L.layerGroup();
+                new L.Control.CustomLayers(null, orgOverlays, {
+                    collapsed: true,
+                    position: 'topright',
+                    title: 'Filter by Organization'
+                }).addTo(map);
+
+                // Create separate layer control for health status (collapsed)
+                const healthOverlays = {};
                 const healthLabels = {
                     'healthy': '🟢 Healthy',
                     'good': '🟢 Good',
@@ -1119,21 +1153,13 @@
                     'unknown': '⚪ Unknown'
                 };
                 healthStatuses.forEach(status => {
-                    overlays[healthLabels[status]] = healthLayers[status];
+                    healthOverlays[healthLabels[status]] = healthLayers[status];
                 });
 
-                // Add separator
-                overlays['<hr style="margin: 5px 0;"> '] = L.layerGroup();
-
-                // Add consolidated organization layers
-                overlays['<strong>By Organization:</strong>'] = L.layerGroup();
-                Object.keys(consolidatedOrgLayers).sort().forEach(org => {
-                    overlays[org] = consolidatedOrgLayers[org];
-                });
-
-                L.control.layers(null, overlays, {
-                    collapsed: false,
-                    position: 'topright'
+                new L.Control.CustomLayers(null, healthOverlays, {
+                    collapsed: true,
+                    position: 'topright',
+                    title: 'Filter by Health Status'
                 }).addTo(map);
 
                 // Update stats
