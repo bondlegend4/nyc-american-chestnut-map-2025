@@ -3,7 +3,7 @@ NYC AMERICAN CHESTNUT MAP - QUICK START
 ========================================
 
 📍 PROJECT LOCATION:
-/Users/jose_d_sandoval/Desktop/Send_to_Diana/Highway_folder/lpr-/nyc-american-chestnut-map-2025/
+/nyc-american-chestnut-map-2025/
 
 ⚡ TEST LOCALLY (30 seconds):
 cd nyc-american-chestnut-map-2025

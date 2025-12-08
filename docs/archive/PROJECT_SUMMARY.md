@@ -221,7 +221,7 @@ Phase 3: **Full Backend** (1000+ trees, ML predictions, mobile app)
 
 ## Contact & Support
 
-- Project directory: `/Users/jose_d_sandoval/Desktop/Send_to_Diana/Highway_folder/lpr-/nyc-american-chestnut-map-2025/`
+- Project directory: `nyc-american-chestnut-map-2025/`
 - Local server: `python3 -m http.server 8000`
 - Test URL: http://localhost:8000
 
