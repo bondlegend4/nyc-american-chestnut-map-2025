@@ -95,8 +95,11 @@
             text-transform: uppercase;
         }
         .health-healthy { background: #d4edda; color: #155724; }
+        .health-good { background: #d1f2d5; color: #1e7e34; }
         .health-fair { background: #fff3cd; color: #856404; }
+        .health-declining { background: #ffe5d0; color: #a84200; }
         .health-poor { background: #f8d7da; color: #721c24; }
+        .health-dead { background: #d6d6d6; color: #3a0a0a; }
         .health-unknown { background: #e2e3e5; color: #383d41; }
 
         /* Accuracy badges */
@@ -212,8 +215,11 @@
             border: 2px solid #555;
         }
         .icon-healthy { background: #28a745; }
+        .icon-good { background: #5cb85c; }
         .icon-fair { background: #ffc107; }
+        .icon-declining { background: #fd7e14; }
         .icon-poor { background: #dc3545; }
+        .icon-dead { background: #6c1c1c; }
         .icon-unknown { background: #6c757d; }
 
         /* Growth Chart Modal */
@@ -477,15 +483,27 @@
         <h4>Tree Health Status</h4>
         <div class="legend-item">
             <div class="legend-icon icon-healthy"></div>
-            <span>Healthy</span>
+            <span>Healthy (Excellent/Very Good)</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-icon icon-good"></div>
+            <span>Good</span>
         </div>
         <div class="legend-item">
             <div class="legend-icon icon-fair"></div>
             <span>Fair</span>
         </div>
         <div class="legend-item">
+            <div class="legend-icon icon-declining"></div>
+            <span>Declining (Blight/Issues)</span>
+        </div>
+        <div class="legend-item">
             <div class="legend-icon icon-poor"></div>
-            <span>Poor / Monitoring</span>
+            <span>Poor</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-icon icon-dead"></div>
+            <span>Dead</span>
         </div>
         <div class="legend-item">
             <div class="legend-icon icon-unknown"></div>
@@ -550,10 +568,13 @@
         // Custom marker icons based on health status
         function getHealthIcon(healthStatus) {
             const colors = {
-                'healthy': '#28a745',
-                'fair': '#ffc107',
-                'poor': '#dc3545',
-                'unknown': '#6c757d'
+                'healthy': '#28a745',      // Green
+                'good': '#5cb85c',         // Light green
+                'fair': '#ffc107',         // Yellow/amber
+                'declining': '#fd7e14',    // Orange
+                'poor': '#dc3545',         // Red
+                'dead': '#6c1c1c',         // Dark red
+                'unknown': '#6c757d'       // Gray
             };
 
             const color = colors[healthStatus] || colors['unknown'];
@@ -1006,9 +1027,17 @@
                         icon: getHealthIcon(props.health_status)
                     });
 
-                    marker.bindPopup(() => createPopupContent(props, coords), {
+                    // Bind popup with loading message, then load async content
+                    marker.bindPopup('<div style="padding: 20px; text-align: center;">Loading...</div>', {
                         minWidth: 250,
                         maxWidth: 300
+                    });
+
+                    // Handle popup opening to load async content
+                    marker.on('click', async function() {
+                        const popup = marker.getPopup();
+                        const content = await createPopupContent(props, coords);
+                        popup.setContent(content);
                     });
 
                     // Add to layers
